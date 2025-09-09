@@ -73,3 +73,24 @@ employees[1] = fun_change_vaishnavi(employees[1])
 
 element iterator
 range loops(for, while)
+
+
+-----
+
+1. Python 
+2. Git 
+3. variables and primitive types vs derived types 
+
+tuple, object, dictinary - to represent data like record like employee, product, flight etc 
+
+list - to represent multiple data or records ie array of records 
+
+app of array as the database and menu driven programming 
+    - employee management 
+    - tuple as employee 
+
+Next: 
+    dictionary as employee 
+    object as employee 
+
+    - persistent store : to save in file (binary file | json | csv) / database like sqlite etc 
