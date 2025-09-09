@@ -1,0 +1,75 @@
+1. Python basics
+
+Datatypes : 
+Primitive - int, float, str, bool(true/false)
+
+Variables: One of the Identifiers, holds the data 
+
+Ex:
+name = "Mahesh"
+age=46
+salary = 4000.50
+is_active = True
+
+Derived data -
+When we need many names, many employees or many values
+list,object,tuple,dict,set
+
+
+Ex:
+List
+names=['Mahesh','Vaishnavi','Bhanu']
+
+Object of class
+employees=[Employee('Mahesh', 46, 4000.50, True),Employee('Vaishnavi', 21, 40000.75, True),Employee('Bhanu', 22, 50000, True)]
+
+Tuple: collection of elements, immutable
+employees = [('Mahesh', 46, 4000.50, True),('Vaishnavi', 21, 40000.75, True),('Bhanu', 22, 50000, True)]
+
+Dictionary: 
+employees= [{'name': 'Mahesh', 'age':46, 'salary':4000.50, 'is_active':True},
+{'name': 'Vaishnavi', 'age':21, 'salary':40000.75, 'is_active':True},
+{'name': 'Bhanu', 'age':22, 'salary':50000, 'is_active':True}]
+
+Memory layout:
+heap:
+ref1[Mahesh]
+ref2[46]
+ref3[4000.50]
+ref4[True]
+ref5['Mahesh']['Vaishnavi']['Bhanu']        index=0,1,2,...
+...
+ref6[ref7][ref8->ref10][ref9]
+ref7['Mahesh'][48][4000.50][True]           index=0,1,2,...
+ref8 Vaishnavi elements -> garbage collector
+ref9 Bhanu elements
+ref10 ['Vaishnavi'][21][60000.75][True]
+
+
+stack:
+name[ref1]
+age[ref2]
+salary[ref3]
+is_active[ref4]
+names[ref5]
+employees[ref6]
+
+referred by index
+print(names[1], employees[1][1])
+
+fun_change_vaishnavi(vaishnavi):
+   name, age, salary, is_active = vaishnavi   #tuple
+   salary+=20000
+   return (name,age,salary,is_active)
+
+employees[1] = fun_change_vaishnavi(employees[1])
+
+
+
+.append() - add elements to array last
+.pop() - delete last element or specific element by giving index
+.extend() - add many elements via sequence same type
+.remove() - delete specific element by value (if duplicates are there, first occurance is removed)
+
+element iterator
+range loops(for, while)
