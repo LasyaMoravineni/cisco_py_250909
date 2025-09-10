@@ -1,0 +1,166 @@
+Types
+    Primitive: int, float, bool
+    Derived: str, list, tuple, dict, set / frozenset
+
+----------------------------------------------
+
+Break : 15 minutes
+10:30 am
+
+
+writer = open(filename, 'w')
+writer.write(something)
+#...
+writer.close()
+
+-----
+
+with open(filename, 'w') as writer:
+    writer.write(something)
+    #...
+
+
+---------------------------------------
+
+Chetan 
+
+integers_list = [int(x) for x in input("Enter integers separated by spaces: ").split()]
+sum = 0
+for ele in integers_list:
+    sum += ele
+avg = sum/len(integers_list)
+
+file_name = 'numbers_data.txt'
+with open(file_name,'w') as writer:
+    writer.write(f'List: {integers_list}\n')
+    writer.write(f'Sum: {sum}\n')
+    writer.write(f'Average: {avg}')
+
+with open(file_name,'r') as reader:
+    line_list = reader.readline()
+    line_sum = reader.readline()
+    line_avg = reader.readline()
+    print(line_list)
+    print(line_sum)
+    print(line_avg)
+    
+---------------------------------------
+
+Bhanu 
+
+sentence = input('Enter a sentence: ')
+words = sentence.split()
+tuple_words = tuple(word.upper() for word in words)
+print('List:', words)
+print('Tuple:', tuple_words) 
+
+
+filename = 'sentence_data.txt'
+with open(filename, 'w') as writer:
+    writer.write(f'List of words: {words}')
+    writer.write(f'Tuple of words: {tuple_words}')
+
+with open(filename, 'r') as reader:
+    list_words = reader.readline()
+    tuple_words = reader.readline()
+    print(list_words)
+    print(tuple_words)
+
+---------------------------------------
+
+functions: 
+# 001
+def find_salaries_sum(first, second):
+    return first + second 
+#usage 
+print(find_salaries_sum(1000,2000))
+print(find_salaries_sum(1000,2000, 3000)) #error
+
+print(find_salaries_sum(second=2000, first=1000))
+print(find_salaries_sum(first=2000, second=1000))
+
+# 002 | variable parameters -> end of the params
+# variable args is of type tuple  
+def find_salaries_sum(first, second, *salaries):
+    result = first + second 
+    for salary in salaries:
+        result += salary 
+    return result 
+#usage 
+print(find_salaries_sum(1000,2000))
+print(find_salaries_sum(1000,2000, 3000))
+print(find_salaries_sum(1000,2000,3000,4000))
+
+# 003 | many salaries min 2 salaries to find sum
+# named (keywords) variable args -> args is of type dict   
+def find_salaries_sum(first, second, **named_salaries):
+    result = first + second 
+    for keyword in named_salaries:
+        result += named_salaries[keyword] 
+    return result 
+
+print(find_salaries_sum(first=1000,second=2000))
+print(find_salaries_sum(first=1000,second=2000,third=3000))
+print(find_salaries_sum(first=1000,second=2000,third=3000,fourth=4000))
+
+# 004 | default args 
+def find_salaries_sum(first, second, bonus=500):
+    return (first + bonus) + (second + bonus)
+#usage 
+print(find_salaries_zsum(1000,2000)) # 1000->first | 2000->second | 500->bonus == 1500 + 2500 = 4000
+print(find_salaries_sum(1000,2000,100)) # 1000->first | 2000->second | 100->bonus == 1100 + 2100 = 3200
+
+
+
+==================================
+-> python debugger
+    From vsc, 
+        Run and Debug 
+        -> Picked the programming lang 
+        -> file to be debugged 
+    Then Debugger is on. 
+    There, we have options :
+    continue | step over | step into | step out 
+    We used breakpoints to take the control to the first break point 
+    and then by 'continue' to next next breakpoints. 
+
+    We tried out step into, step out, step over 
+    by using them we will understand.
+
+-> 
+
+employees -> each emp : tuple 
+employees -> each emp : dict 
+employees -> each emp : object 
+
+-> 
+
+employees -> each emp : dict | save to file 
+(binary | json)
+
+-----------------------------------------------------
+pickle along with the file handle:
+    to persist store / retrieve the python object into / from file
+    python object is stored as binary [byte by byte]
+
+    python 2 - single char is of ascii ie single byte ie 8 bits 
+    python 3 - single char is of unicode ie 16 bits ie 2 byte
+
+    to store the text: file operations 
+    to store the object: binary file ie pickle 
+        object -> memory -> byte by byte => moved to the file
+        byte by byte conversion of the object is called is serialization 
+            ie object to file (bytes) : serialization 
+        the object conversion from byte by byte is called is de-serialization
+            ie file (bytes) to object : deserialization
+=====================================================
+employee app ->  inmemory array -> element: tuple
+employee app ->  inmemory array -> element: dict 
+employee app ->  binary file storage -> element: dict
+employee app ->  json file storage -> element: dict  
+=====================================================
+Tomorrow: 
+    Assignment: 2 problems 
+    Completing the application:
+        Flight : {id, number, airline_name, seats, price, source, destination}
+        1. json DB 2. bindary DB  

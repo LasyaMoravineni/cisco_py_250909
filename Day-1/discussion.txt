@@ -94,3 +94,42 @@ Next:
     object as employee 
 
     - persistent store : to save in file (binary file | json | csv) / database like sqlite etc 
+
+
+
+Function: reusable block of code
+def keyword, arguments, code, return statement, calling function name
+
+module is a file 
+modularation : put code in multiple files and organise in a folder called package
+variales within function are called local variables
+to update globalvariables, we use global keyword
+
+
+
+
+Python slicing: [start:end:step]
+negative index to start from last
+name[:-1] - skips last character
+name[-1::-1]
+
+in and not in
+
+sum(),max(),min()
+
+reverse() and sort() changes original list
+
+writer = open(filename, 'mode')           w,r,a,etc
+writer.write(something)
+#..
+writer.close()
+
+or
+
+with open(filename,'w') as writer:
+writer.write(smtng)
+
+
+
+functions:
+
