@@ -1,0 +1,2 @@
+List: ['I', 'am', 'Lasya,', 'a', 'trainee']
+Tuple: ('I', 'am', 'Lasya,', 'a', 'trainee')
