@@ -1,0 +1,31 @@
+2025-09-11 12:19:46,464 [INFO] BEGIN (implicit)
+2025-09-11 12:19:46,468 [INFO] SELECT employees.id AS employees_id, employees.name AS employees_name, employees.age AS employees_age, employees.salary AS employees_salary, employees.is_active AS employees_is_active 
+FROM employees
+2025-09-11 12:19:46,468 [INFO] [generated in 0.00041s] ()
+2025-09-11 12:19:46,469 [INFO] Read all employees
+2025-09-11 13:59:49,419 [INFO] BEGIN (implicit)
+2025-09-11 13:59:49,422 [INFO] INSERT INTO employees (id, name, age, salary, is_active) VALUES (?, ?, ?, ?, ?)
+2025-09-11 13:59:49,422 [INFO] [generated in 0.00035s] (1001, 'Einstein', 160, 0.0, 0)
+2025-09-11 13:59:49,424 [INFO] COMMIT
+2025-09-11 13:59:49,426 [INFO] Employee created
+2025-09-11 13:59:56,843 [INFO] BEGIN (implicit)
+2025-09-11 13:59:56,844 [INFO] SELECT employees.id AS employees_id, employees.name AS employees_name, employees.age AS employees_age, employees.salary AS employees_salary, employees.is_active AS employees_is_active 
+FROM employees
+2025-09-11 13:59:56,844 [INFO] [generated in 0.00014s] ()
+2025-09-11 13:59:56,845 [INFO] Read all employees
+2025-09-11 14:02:07,265 [INFO] BEGIN (implicit)
+2025-09-11 14:02:07,267 [INFO] INSERT INTO employees (id, name, age, salary, is_active) VALUES (?, ?, ?, ?, ?)
+2025-09-11 14:02:07,267 [INFO] [generated in 0.00022s] (101, 'Einstein', 160, 0.0, 0)
+2025-09-11 14:02:07,267 [INFO] ROLLBACK
+2025-09-11 14:02:07,267 [ERROR] Duplicate employee id:(sqlite3.IntegrityError) UNIQUE constraint failed: employees.id
+[SQL: INSERT INTO employees (id, name, age, salary, is_active) VALUES (?, ?, ?, ?, ?)]
+[parameters: (101, 'Einstein', 160, 0.0, 0)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-09-11 14:20:33,345 [INFO] BEGIN (implicit)
+2025-09-11 14:20:33,349 [INFO] INSERT INTO employees (id, name, age, salary, is_active) VALUES (?, ?, ?, ?, ?)
+2025-09-11 14:20:33,349 [INFO] [generated in 0.00034s] (101, 'Einstein', 160, 0.0, 0)
+2025-09-11 14:20:33,350 [INFO] ROLLBACK
+2025-09-11 14:20:33,350 [ERROR] Duplicate employee id:(sqlite3.IntegrityError) UNIQUE constraint failed: employees.id
+[SQL: INSERT INTO employees (id, name, age, salary, is_active) VALUES (?, ?, ?, ?, ?)]
+[parameters: (101, 'Einstein', 160, 0.0, 0)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)

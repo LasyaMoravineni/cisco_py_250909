@@ -1,0 +1,68 @@
+funtion - function in module and import 
+---
+basics of py, file handling 
+    - primitive
+    - str, tuple, dict, list, 
+        set / frozenset 
+---
+apps 
+    - inmemory app - emp as tuple 
+    - inmemory app - emp as dict 
+    - binary file db - emp as dict 
+    - json file db - emp as dict  
+---
+debugger
+---
+app 
+    - sql db- sqlite - orm 
+    - exception handling 
+        - custom exceptions 
+        - raise exceptions 
+    - logging into file 
+    - unit test 
+
+    - moudle / package 
+    - object oriented programming 
+    - datetime module  
+
+sqlite: file RDBMS - SQL DB - lightweight
+RDBMS : oracle, sql server, postgres, mysql 
+
+SQL vs noSQL (mongo / cassandra etc)
+SQL : table is foundation where we will have data like employee 
+      relations like constraints - referential integrity 
+      table - rows - each row is data like employee - records
+            - columns - meta data about details of the data 
+                like datatype, constraints etc 
+noSQL: mongo - (json / bson) document replacement for table
+    SQL         noSQL (mongo)   
+    db          db 
+    table       collection
+    row         document  
+
+DB Browser for SQLLite - client tool to work with sqlite file RDBMS
+- install db browser : download and install  
+
+-----------------------------------------------
+Day2/emp_app_json_dict dir is copied to Day3
+
+Day3/emp_app_json_dict rename as 
+Day3/emp_app_sql_dict
+    - app.py (no change)
+    - db_json.py    (delete it)
+    - repo_json_dict.py (rename it as ) 
+        - repo_sql_dict.py 
+-----------------------------------------------
+sqlalchemy  - is not core module - we have to install it 
+    In terminal: prompt:
+        $ pip install SQLAlchemy    #windows users
+        $ pip3 install SQLAlchemy    #mac users
+
+    To check sqlalchemy installed:
+        $ pip list  #windows users
+        $ pip3 list  #mac users
+    
+
+sqlite      - module - core module
+
+SQLAlchemy is the ORM library / python module 
