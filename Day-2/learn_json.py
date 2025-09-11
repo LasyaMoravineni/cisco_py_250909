@@ -1,6 +1,6 @@
 import json 
 
-flight = {'flight_number': 'I700', 'airline':'Indigo', 
+flight = {'id':123,'flight_number': 'I700', 'airline':'Indigo', 
           'capacity':225, 'price': 4500, 
           'source': 'Bangalore', 
           'destination':'Hyderabad'}
@@ -15,3 +15,4 @@ with open(file_name,'w') as writer:
 with open(file_name,'r') as reader:
     flight_from_file = json.load(reader) 
     print('Flight after read from json file: ',flight_from_file)
+

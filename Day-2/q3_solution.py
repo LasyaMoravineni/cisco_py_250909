@@ -16,3 +16,4 @@ with open(file_name,'r') as reader:
     line_tuple=reader.readline()
     print(line_list)
     print(line_tuple)
+
