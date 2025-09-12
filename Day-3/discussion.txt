@@ -1,3 +1,4 @@
+
 funtion - function in module and import 
 ---
 basics of py, file handling 
@@ -66,3 +67,28 @@ sqlalchemy  - is not core module - we have to install it
 sqlite      - module - core module
 
 SQLAlchemy is the ORM library / python module 
+
+-----------------------------------------------
+
+package : db/
+emp_app_sql_dict_erich/ 
+    db/                 --> package by __init__.py
+        - __init__.py
+        - log.py            (no dependency)
+        - db_models.py      (no dependency)
+        - db_setup.py       (depends on: db_models) use via . such as .db_models
+        - exc.py            (no dependency)
+        - repo_sql_dict.py  (depends on: db_setup, log, exc) use via . such as .db_setup etc 
+    - app.py 
+    - test_repo.py
+
+    pytest 
+        $ [pip / pip3] install pytest
+
+
+
+
+
+Assignment: 
+    like employee app on SQLite DB with log/exception/unittest 
+    implement flight app.

@@ -6,8 +6,8 @@
 
 from .db_setup import session,Employee
 from .log import logging
-from sqlalchemy.exc import SQLAlchemyError, IntegrityError
-from .exc import EmployeeNotFoundError,EmployeeAlreadyExistsError,DatabaseError
+from sqlalchemy.exc import SQLAlchemyError, IntegrityError    #pre-defined exceptions
+from .exc import EmployeeNotFoundError,EmployeeAlreadyExistsError,DatabaseError         #custom exceptions
 
 
 def create_employee(employee):
