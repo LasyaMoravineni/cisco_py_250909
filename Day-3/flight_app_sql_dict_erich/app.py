@@ -35,22 +35,32 @@ Your Option:'''
 
         
     elif choice == 2:
-        print('List of Flights:')
-        for flight in repo.read_all_flights():
-            print(flight)
+        try:
+            print('List of Flights:')
+            for flight in repo.read_all_flights():
+                print(flight)
+        except repo.FlightNotFoundError as ex:
+            print(f"{ex}")
+        except repo.DatabaseError as ex:
+            print(f"{ex}")
+
+
     elif choice == 3:
         id = int(input('ID:'))
-        flight = repo.read_by_id(id)
-        if flight == None:
-            print('Flight not found.')
-        else:
+        try:
+            flight = repo.read_by_id(id)
             print(flight)
+        except repo.FlightNotFoundError as ex:
+            print(f"{ex}")
+        except repo.DatabaseError as ex:
+            print(f"{ex}")
+            
+
+
     elif choice == 4:
         id = int(input('ID:'))
-        flight = repo.read_by_id(id)
-        if flight == None: 
-            print('Flight Not Found')
-        else:
+        try:
+            flight = repo.read_by_id(id)
             print(flight)
             price = input('New Price:')
             new_flight = {'id':flight['id'], 
@@ -62,14 +72,23 @@ Your Option:'''
                 'destination':flight['destination']}
             repo.update(id, new_flight)
             print('Flight price updated successfully.')
+        except repo.FlightNotFoundError as ex:
+            print(f"{ex}")
+        except repo.DatabaseError as ex:
+            print(f"{ex}")
+
+
     elif choice == 5:
         id = int(input('ID:'))
-        flight = repo.read_by_id(id)
-        if flight == None: 
-            print('Flight Not Found')
-        else:
+        try:
             repo.delete_flight(id)
-            print('Flight Deleted Succesfully.')
+            print('Flight deleted succesfully.')
+        except repo.FlightNotFoundError as ex:
+            print(f"{ex}")
+        except repo.DatabaseError as ex:
+            print(f"{ex}")
+
+
     elif choice == 6: 
         print('Thank you for using Application')
 
