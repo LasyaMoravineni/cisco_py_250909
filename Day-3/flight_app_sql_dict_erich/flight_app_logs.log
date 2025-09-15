@@ -1,0 +1,136 @@
+2025-09-13 15:32:44,883 [INFO] BEGIN (implicit)
+2025-09-13 15:32:44,886 [INFO] SELECT flights.id AS flights_id, flights.flight_number AS flights_flight_number, flights.airline AS flights_airline, flights.seats AS flights_seats, flights.price AS flights_price, flights.source AS flights_source, flights.destination AS flights_destination 
+FROM flights
+2025-09-13 15:32:44,887 [INFO] [generated in 0.00039s] ()
+2025-09-13 15:32:44,888 [INFO] Read all flights
+2025-09-13 15:34:05,143 [INFO] INSERT INTO flights (id, flight_number, airline, seats, price, source, destination) VALUES (?, ?, ?, ?, ?, ?, ?)
+2025-09-13 15:34:05,145 [INFO] [generated in 0.00221s] (101, 'AI102', 'AirIndia', 500, 5500, 'Hyderabad', 'Bangalore')
+2025-09-13 15:34:05,148 [INFO] COMMIT
+2025-09-13 15:34:05,149 [INFO] Flight created
+2025-09-13 15:34:54,894 [INFO] BEGIN (implicit)
+2025-09-13 15:34:54,894 [INFO] INSERT INTO flights (id, flight_number, airline, seats, price, source, destination) VALUES (?, ?, ?, ?, ?, ?, ?)
+2025-09-13 15:34:54,894 [INFO] [cached since 49.75s ago] (102, 'SJ401', 'SpiceJet', 400, 4000, 'Chennai', 'Bangalore')
+2025-09-13 15:34:54,896 [INFO] COMMIT
+2025-09-13 15:34:54,898 [INFO] Flight created
+2025-09-13 15:34:56,204 [INFO] BEGIN (implicit)
+2025-09-13 15:34:56,205 [INFO] SELECT flights.id AS flights_id, flights.flight_number AS flights_flight_number, flights.airline AS flights_airline, flights.seats AS flights_seats, flights.price AS flights_price, flights.source AS flights_source, flights.destination AS flights_destination 
+FROM flights
+2025-09-13 15:34:56,205 [INFO] [cached since 131.3s ago] ()
+2025-09-13 15:34:56,205 [INFO] Read all flights
+2025-09-13 15:35:40,487 [INFO] SELECT flights.id AS flights_id, flights.flight_number AS flights_flight_number, flights.airline AS flights_airline, flights.seats AS flights_seats, flights.price AS flights_price, flights.source AS flights_source, flights.destination AS flights_destination 
+FROM flights 
+WHERE flights.id = ?
+ LIMIT ? OFFSET ?
+2025-09-13 15:35:40,488 [INFO] [generated in 0.00060s] (101, 1, 0)
+2025-09-13 15:35:40,488 [INFO] Read flight model
+2025-09-13 15:35:40,488 [INFO] Read flight for given id
+2025-09-13 15:36:43,238 [INFO] INSERT INTO flights (id, flight_number, airline, seats, price, source, destination) VALUES (?, ?, ?, ?, ?, ?, ?)
+2025-09-13 15:36:43,238 [INFO] [cached since 158.1s ago] (101, 'IG162', 'IndiGo', 500, 6000, 'Delhi', 'Jaipur')
+2025-09-13 15:36:43,239 [INFO] ROLLBACK
+2025-09-13 15:36:43,239 [ERROR] Duplicate flight id:(sqlite3.IntegrityError) UNIQUE constraint failed: flights.id
+[SQL: INSERT INTO flights (id, flight_number, airline, seats, price, source, destination) VALUES (?, ?, ?, ?, ?, ?, ?)]
+[parameters: (101, 'IG162', 'IndiGo', 500, 6000, 'Delhi', 'Jaipur')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-09-13 17:06:44,613 [INFO] BEGIN (implicit)
+2025-09-13 17:06:44,617 [INFO] SELECT flights.id AS flights_id, flights.flight_number AS flights_flight_number, flights.airline AS flights_airline, flights.seats AS flights_seats, flights.price AS flights_price, flights.source AS flights_source, flights.destination AS flights_destination 
+FROM flights
+2025-09-13 17:06:44,618 [INFO] [generated in 0.00045s] ()
+2025-09-13 17:06:44,619 [INFO] Read all flights
+2025-09-13 17:07:06,047 [INFO] SELECT flights.id AS flights_id, flights.flight_number AS flights_flight_number, flights.airline AS flights_airline, flights.seats AS flights_seats, flights.price AS flights_price, flights.source AS flights_source, flights.destination AS flights_destination 
+FROM flights 
+WHERE flights.id = ?
+ LIMIT ? OFFSET ?
+2025-09-13 17:07:06,047 [INFO] [generated in 0.00039s] (101, 1, 0)
+2025-09-13 17:07:06,048 [INFO] Read flight model
+2025-09-13 17:07:06,048 [INFO] Read flight for given id
+2025-09-13 17:07:11,979 [INFO] SELECT flights.id AS flights_id, flights.flight_number AS flights_flight_number, flights.airline AS flights_airline, flights.seats AS flights_seats, flights.price AS flights_price, flights.source AS flights_source, flights.destination AS flights_destination 
+FROM flights 
+WHERE flights.id = ?
+ LIMIT ? OFFSET ?
+2025-09-13 17:07:11,980 [INFO] [cached since 5.933s ago] (105, 1, 0)
+2025-09-13 17:07:11,981 [INFO] Flight not found 105.
+2025-09-13 17:10:42,791 [INFO] BEGIN (implicit)
+2025-09-13 17:10:42,794 [INFO] SELECT flights.id AS flights_id, flights.flight_number AS flights_flight_number, flights.airline AS flights_airline, flights.seats AS flights_seats, flights.price AS flights_price, flights.source AS flights_source, flights.destination AS flights_destination 
+FROM flights
+2025-09-13 17:10:42,794 [INFO] [generated in 0.00018s] ()
+2025-09-13 17:10:42,795 [INFO] Read all flights
+2025-09-13 17:10:49,325 [INFO] SELECT flights.id AS flights_id, flights.flight_number AS flights_flight_number, flights.airline AS flights_airline, flights.seats AS flights_seats, flights.price AS flights_price, flights.source AS flights_source, flights.destination AS flights_destination 
+FROM flights 
+WHERE flights.id = ?
+ LIMIT ? OFFSET ?
+2025-09-13 17:10:49,325 [INFO] [generated in 0.00053s] (105, 1, 0)
+2025-09-13 17:10:49,326 [INFO] Flight not found 105.
+2025-09-13 17:12:38,922 [INFO] INSERT INTO flights (id, flight_number, airline, seats, price, source, destination) VALUES (?, ?, ?, ?, ?, ?, ?)
+2025-09-13 17:12:38,923 [INFO] [generated in 0.00048s] (102, 'AI69', 'AirIndia', 500, 7000, 'Jaipur', 'Mumbai')
+2025-09-13 17:12:38,923 [INFO] ROLLBACK
+2025-09-13 17:12:38,923 [ERROR] Duplicate flight id:(sqlite3.IntegrityError) UNIQUE constraint failed: flights.id
+[SQL: INSERT INTO flights (id, flight_number, airline, seats, price, source, destination) VALUES (?, ?, ?, ?, ?, ?, ?)]
+[parameters: (102, 'AI69', 'AirIndia', 500, 7000, 'Jaipur', 'Mumbai')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-09-13 17:13:37,982 [INFO] BEGIN (implicit)
+2025-09-13 17:13:37,983 [INFO] SELECT flights.id AS flights_id, flights.flight_number AS flights_flight_number, flights.airline AS flights_airline, flights.seats AS flights_seats, flights.price AS flights_price, flights.source AS flights_source, flights.destination AS flights_destination 
+FROM flights 
+WHERE flights.id = ?
+ LIMIT ? OFFSET ?
+2025-09-13 17:13:37,983 [INFO] [cached since 168.7s ago] (108, 1, 0)
+2025-09-13 17:13:37,984 [INFO] Flight not found 108.
+2025-09-13 17:15:12,014 [INFO] SELECT flights.id AS flights_id, flights.flight_number AS flights_flight_number, flights.airline AS flights_airline, flights.seats AS flights_seats, flights.price AS flights_price, flights.source AS flights_source, flights.destination AS flights_destination 
+FROM flights 
+WHERE flights.id = ?
+ LIMIT ? OFFSET ?
+2025-09-13 17:15:12,014 [INFO] [cached since 262.7s ago] (178, 1, 0)
+2025-09-13 17:15:12,015 [INFO] Flight not found 178.
+2025-09-13 17:16:07,981 [INFO] BEGIN (implicit)
+2025-09-13 17:16:07,985 [INFO] SELECT flights.id AS flights_id, flights.flight_number AS flights_flight_number, flights.airline AS flights_airline, flights.seats AS flights_seats, flights.price AS flights_price, flights.source AS flights_source, flights.destination AS flights_destination 
+FROM flights
+2025-09-13 17:16:07,985 [INFO] [generated in 0.00055s] ()
+2025-09-13 17:16:07,986 [INFO] Read all flights
+2025-09-13 17:16:13,382 [INFO] SELECT flights.id AS flights_id, flights.flight_number AS flights_flight_number, flights.airline AS flights_airline, flights.seats AS flights_seats, flights.price AS flights_price, flights.source AS flights_source, flights.destination AS flights_destination 
+FROM flights 
+WHERE flights.id = ?
+ LIMIT ? OFFSET ?
+2025-09-13 17:16:13,382 [INFO] [generated in 0.00055s] (145, 1, 0)
+2025-09-13 17:16:13,383 [ERROR] Flight not found 145.
+2025-09-13 17:17:03,573 [INFO] SELECT flights.id AS flights_id, flights.flight_number AS flights_flight_number, flights.airline AS flights_airline, flights.seats AS flights_seats, flights.price AS flights_price, flights.source AS flights_source, flights.destination AS flights_destination 
+FROM flights 
+WHERE flights.id = ?
+ LIMIT ? OFFSET ?
+2025-09-13 17:17:03,574 [INFO] [cached since 50.19s ago] (145, 1, 0)
+2025-09-13 17:17:03,574 [ERROR] Flight not found 145.
+2025-09-13 17:18:55,926 [INFO] SELECT flights.id AS flights_id, flights.flight_number AS flights_flight_number, flights.airline AS flights_airline, flights.seats AS flights_seats, flights.price AS flights_price, flights.source AS flights_source, flights.destination AS flights_destination 
+FROM flights 
+WHERE flights.id = ?
+ LIMIT ? OFFSET ?
+2025-09-13 17:18:55,926 [INFO] [cached since 162.5s ago] (47, 1, 0)
+2025-09-13 17:18:55,927 [ERROR] Flight not found 47.
+2025-09-13 17:20:38,627 [INFO] INSERT INTO flights (id, flight_number, airline, seats, price, source, destination) VALUES (?, ?, ?, ?, ?, ?, ?)
+2025-09-13 17:20:38,627 [INFO] [generated in 0.00051s] (103, 'IG75', 'IndiGo', 800, 3095, 'Mumbai', 'Hyderabad')
+2025-09-13 17:20:38,628 [INFO] COMMIT
+2025-09-13 17:20:38,631 [INFO] Flight created
+2025-09-13 17:20:43,608 [INFO] BEGIN (implicit)
+2025-09-13 17:20:43,608 [INFO] SELECT flights.id AS flights_id, flights.flight_number AS flights_flight_number, flights.airline AS flights_airline, flights.seats AS flights_seats, flights.price AS flights_price, flights.source AS flights_source, flights.destination AS flights_destination 
+FROM flights
+2025-09-13 17:20:43,609 [INFO] [cached since 275.6s ago] ()
+2025-09-13 17:20:43,609 [INFO] Read all flights
+2025-09-13 17:22:25,935 [INFO] SELECT flights.id AS flights_id, flights.flight_number AS flights_flight_number, flights.airline AS flights_airline, flights.seats AS flights_seats, flights.price AS flights_price, flights.source AS flights_source, flights.destination AS flights_destination 
+FROM flights 
+WHERE flights.id = ?
+ LIMIT ? OFFSET ?
+2025-09-13 17:22:25,937 [INFO] [cached since 372.6s ago] (102, 1, 0)
+2025-09-13 17:22:25,938 [INFO] Read flight model
+2025-09-13 17:22:25,938 [INFO] Read flight for given id
+2025-09-13 17:22:32,540 [INFO] SELECT flights.id AS flights_id, flights.flight_number AS flights_flight_number, flights.airline AS flights_airline, flights.seats AS flights_seats, flights.price AS flights_price, flights.source AS flights_source, flights.destination AS flights_destination 
+FROM flights 
+WHERE flights.id = ?
+ LIMIT ? OFFSET ?
+2025-09-13 17:22:32,541 [INFO] [cached since 379.2s ago] (102, 1, 0)
+2025-09-13 17:22:32,541 [INFO] Read flight model
+2025-09-13 17:22:32,543 [INFO] UPDATE flights SET price=? WHERE flights.id = ?
+2025-09-13 17:22:32,543 [INFO] [generated in 0.00027s] ('3290', 102)
+2025-09-13 17:22:32,545 [INFO] COMMIT
+2025-09-13 17:22:32,547 [INFO] Flight price updated
+2025-09-13 17:22:34,091 [INFO] BEGIN (implicit)
+2025-09-13 17:22:34,092 [INFO] SELECT flights.id AS flights_id, flights.flight_number AS flights_flight_number, flights.airline AS flights_airline, flights.seats AS flights_seats, flights.price AS flights_price, flights.source AS flights_source, flights.destination AS flights_destination 
+FROM flights
+2025-09-13 17:22:34,092 [INFO] [cached since 386.1s ago] ()
+2025-09-13 17:22:34,093 [INFO] Read all flights

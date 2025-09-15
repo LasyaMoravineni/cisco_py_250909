@@ -29,3 +29,28 @@ FROM employees
 [SQL: INSERT INTO employees (id, name, age, salary, is_active) VALUES (?, ?, ?, ?, ?)]
 [parameters: (101, 'Einstein', 160, 0.0, 0)]
 (Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-09-13 14:56:48,529 [INFO] BEGIN (implicit)
+2025-09-13 14:56:48,532 [INFO] SELECT employees.id AS employees_id, employees.name AS employees_name, employees.age AS employees_age, employees.salary AS employees_salary, employees.is_active AS employees_is_active 
+FROM employees
+2025-09-13 14:56:48,533 [INFO] [generated in 0.00036s] ()
+2025-09-13 14:56:48,534 [INFO] Read all employees
+2025-09-13 14:57:15,994 [INFO] INSERT INTO employees (id, name, age, salary, is_active) VALUES (?, ?, ?, ?, ?)
+2025-09-13 14:57:15,994 [INFO] [generated in 0.00072s] (1001, 'Einstein', 160, 0.0, 0)
+2025-09-13 14:57:15,995 [INFO] ROLLBACK
+2025-09-13 14:57:15,995 [ERROR] Duplicate employee id:(sqlite3.IntegrityError) UNIQUE constraint failed: employees.id
+[SQL: INSERT INTO employees (id, name, age, salary, is_active) VALUES (?, ?, ?, ?, ?)]
+[parameters: (1001, 'Einstein', 160, 0.0, 0)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-09-15 11:03:42,971 [INFO] BEGIN (implicit)
+2025-09-15 11:03:42,973 [INFO] INSERT INTO employees (id, name, age, salary, is_active) VALUES (?, ?, ?, ?, ?)
+2025-09-15 11:03:42,973 [INFO] [generated in 0.00021s] (101, 'Mahesh', 45, 50000.0, 1)
+2025-09-15 11:03:42,973 [INFO] ROLLBACK
+2025-09-15 11:03:42,974 [ERROR] Duplicate employee id:(sqlite3.IntegrityError) UNIQUE constraint failed: employees.id
+[SQL: INSERT INTO employees (id, name, age, salary, is_active) VALUES (?, ?, ?, ?, ?)]
+[parameters: (101, 'Mahesh', 45, 50000.0, 1)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-09-15 11:03:44,779 [INFO] BEGIN (implicit)
+2025-09-15 11:03:44,780 [INFO] SELECT employees.id AS employees_id, employees.name AS employees_name, employees.age AS employees_age, employees.salary AS employees_salary, employees.is_active AS employees_is_active 
+FROM employees
+2025-09-15 11:03:44,781 [INFO] [generated in 0.00126s] ()
+2025-09-15 11:03:44,782 [INFO] Read all employees
