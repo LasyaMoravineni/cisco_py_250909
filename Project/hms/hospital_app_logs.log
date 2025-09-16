@@ -289,3 +289,76 @@ FROM patients
 2025-09-16 22:18:53,504 [INFO] [cached since 287.8s ago] ()
 2025-09-16 22:18:53,504 [INFO] ROLLBACK
 2025-09-16 22:18:53,505 [INFO] 127.0.0.1 - - [16/Sep/2025 22:18:53] "GET /patients HTTP/1.1" 200 -
+2025-09-16 22:31:27,314 [INFO] BEGIN (implicit)
+2025-09-16 22:31:27,314 [INFO] PRAGMA main.table_info("patients")
+2025-09-16 22:31:27,314 [INFO] [raw sql] ()
+2025-09-16 22:31:27,315 [INFO] COMMIT
+2025-09-16 22:31:27,344 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-09-16 22:31:27,344 [INFO] [33mPress CTRL+C to quit[0m
+2025-09-16 22:31:27,345 [INFO]  * Restarting with stat
+2025-09-16 22:31:27,552 [INFO] BEGIN (implicit)
+2025-09-16 22:31:27,552 [INFO] PRAGMA main.table_info("patients")
+2025-09-16 22:31:27,552 [INFO] [raw sql] ()
+2025-09-16 22:31:27,552 [INFO] COMMIT
+2025-09-16 22:31:27,570 [WARNING]  * Debugger is active!
+2025-09-16 22:31:27,577 [INFO]  * Debugger PIN: 130-375-740
+2025-09-16 22:31:34,038 [INFO] BEGIN (implicit)
+2025-09-16 22:31:34,040 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients
+2025-09-16 22:31:34,041 [INFO] [generated in 0.00038s] ()
+2025-09-16 22:31:34,042 [INFO] ROLLBACK
+2025-09-16 22:31:34,043 [INFO] 127.0.0.1 - - [16/Sep/2025 22:31:34] "GET /patients HTTP/1.1" 200 -
+2025-09-16 22:32:27,058 [INFO] BEGIN (implicit)
+2025-09-16 22:32:27,060 [INFO] INSERT INTO patients (id, name, age, disease) VALUES (?, ?, ?, ?)
+2025-09-16 22:32:27,060 [INFO] [generated in 0.00030s] (1, 'Sameera', 22, 'Flu')
+2025-09-16 22:32:27,060 [INFO] ROLLBACK
+2025-09-16 22:32:27,061 [WARNING] Duplicate patient ID 1: (sqlite3.IntegrityError) UNIQUE constraint failed: patients.id
+[SQL: INSERT INTO patients (id, name, age, disease) VALUES (?, ?, ?, ?)]
+[parameters: (1, 'Sameera', 22, 'Flu')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-09-16 22:32:27,061 [INFO] 127.0.0.1 - - [16/Sep/2025 22:32:27] "[31m[1mPOST /patients HTTP/1.1[0m" 400 -
+2025-09-16 22:33:07,114 [INFO] BEGIN (implicit)
+2025-09-16 22:33:07,116 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+ LIMIT ? OFFSET ?
+2025-09-16 22:33:07,117 [INFO] [generated in 0.00043s] (7, 1, 0)
+2025-09-16 22:33:07,118 [INFO] ROLLBACK
+2025-09-16 22:33:07,118 [INFO] 127.0.0.1 - - [16/Sep/2025 22:33:07] "[33mGET /patients/7 HTTP/1.1[0m" 404 -
+2025-09-16 22:37:00,316 [INFO] BEGIN (implicit)
+2025-09-16 22:37:00,316 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients
+2025-09-16 22:37:00,316 [INFO] [cached since 326.3s ago] ()
+2025-09-16 22:37:00,317 [INFO] ROLLBACK
+2025-09-16 22:37:00,317 [INFO] 127.0.0.1 - - [16/Sep/2025 22:37:00] "GET /patients HTTP/1.1" 200 -
+2025-09-16 22:40:01,110 [INFO] BEGIN (implicit)
+2025-09-16 22:40:01,111 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+ LIMIT ? OFFSET ?
+2025-09-16 22:40:01,111 [INFO] [cached since 414s ago] (2, 1, 0)
+2025-09-16 22:40:01,112 [INFO] ROLLBACK
+2025-09-16 22:40:01,112 [INFO] 127.0.0.1 - - [16/Sep/2025 22:40:01] "GET /patients/2 HTTP/1.1" 200 -
+2025-09-16 22:40:05,196 [INFO] BEGIN (implicit)
+2025-09-16 22:40:05,196 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+ LIMIT ? OFFSET ?
+2025-09-16 22:40:05,197 [INFO] [cached since 418.1s ago] (2, 1, 0)
+2025-09-16 22:40:05,199 [INFO] UPDATE patients SET age=? WHERE patients.id = ?
+2025-09-16 22:40:05,200 [INFO] [generated in 0.00035s] (27, 2)
+2025-09-16 22:40:05,201 [INFO] COMMIT
+2025-09-16 22:40:05,204 [INFO] BEGIN (implicit)
+2025-09-16 22:40:05,205 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+2025-09-16 22:40:05,205 [INFO] [generated in 0.00018s] (2,)
+2025-09-16 22:40:05,205 [INFO] ROLLBACK
+2025-09-16 22:40:05,206 [INFO] 127.0.0.1 - - [16/Sep/2025 22:40:05] "PUT /patients/2 HTTP/1.1" 200 -
+2025-09-16 22:40:07,327 [INFO] BEGIN (implicit)
+2025-09-16 22:40:07,327 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients
+2025-09-16 22:40:07,327 [INFO] [cached since 513.3s ago] ()
+2025-09-16 22:40:07,328 [INFO] ROLLBACK
+2025-09-16 22:40:07,329 [INFO] 127.0.0.1 - - [16/Sep/2025 22:40:07] "GET /patients HTTP/1.1" 200 -
