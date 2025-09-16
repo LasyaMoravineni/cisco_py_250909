@@ -1,0 +1,291 @@
+2025-09-16 20:25:19,619 [INFO] BEGIN (implicit)
+2025-09-16 20:25:19,620 [INFO] PRAGMA main.table_info("patients")
+2025-09-16 20:25:19,620 [INFO] [raw sql] ()
+2025-09-16 20:25:19,620 [INFO] PRAGMA temp.table_info("patients")
+2025-09-16 20:25:19,620 [INFO] [raw sql] ()
+2025-09-16 20:25:19,620 [INFO] 
+CREATE TABLE patients (
+	id INTEGER NOT NULL, 
+	name VARCHAR(255) NOT NULL, 
+	age INTEGER NOT NULL, 
+	disease VARCHAR(255) NOT NULL, 
+	PRIMARY KEY (id)
+)
+
+
+2025-09-16 20:25:19,620 [INFO] [no key 0.00006s] ()
+2025-09-16 20:25:19,621 [INFO] COMMIT
+2025-09-16 20:25:19,658 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-09-16 20:25:19,658 [INFO] [33mPress CTRL+C to quit[0m
+2025-09-16 20:25:19,658 [INFO]  * Restarting with stat
+2025-09-16 20:25:19,864 [INFO] BEGIN (implicit)
+2025-09-16 20:25:19,864 [INFO] PRAGMA main.table_info("patients")
+2025-09-16 20:25:19,864 [INFO] [raw sql] ()
+2025-09-16 20:25:19,865 [INFO] COMMIT
+2025-09-16 20:25:19,883 [WARNING]  * Debugger is active!
+2025-09-16 20:25:19,890 [INFO]  * Debugger PIN: 130-375-740
+2025-09-16 20:27:53,655 [INFO] BEGIN (implicit)
+2025-09-16 20:27:53,658 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients
+2025-09-16 20:27:53,658 [INFO] [generated in 0.00020s] ()
+2025-09-16 20:27:53,659 [INFO] ROLLBACK
+2025-09-16 20:27:53,659 [INFO] 127.0.0.1 - - [16/Sep/2025 20:27:53] "GET /patients HTTP/1.1" 200 -
+2025-09-16 20:29:47,624 [INFO] BEGIN (implicit)
+2025-09-16 20:29:47,626 [INFO] INSERT INTO patients (id, name, age, disease) VALUES (?, ?, ?, ?)
+2025-09-16 20:29:47,626 [INFO] [generated in 0.00028s] (1, 'Anand', 35, 'Flu')
+2025-09-16 20:29:47,627 [INFO] COMMIT
+2025-09-16 20:29:47,629 [INFO] BEGIN (implicit)
+2025-09-16 20:29:47,630 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+ LIMIT ? OFFSET ?
+2025-09-16 20:29:47,630 [INFO] [generated in 0.00019s] (1, 1, 0)
+2025-09-16 20:29:51,721 [INFO] Email sent successfully to lasyam2023@gmail.com with subject: 2025-09-16 20:29:47 Patient Anand Registered.
+2025-09-16 20:29:51,725 [INFO] ROLLBACK
+2025-09-16 20:29:51,727 [INFO] 127.0.0.1 - - [16/Sep/2025 20:29:51] "POST /patients HTTP/1.1" 200 -
+2025-09-16 20:31:26,344 [INFO] BEGIN (implicit)
+2025-09-16 20:31:26,345 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+ LIMIT ? OFFSET ?
+2025-09-16 20:31:26,345 [INFO] [cached since 98.72s ago] (1, 1, 0)
+2025-09-16 20:31:26,345 [INFO] ROLLBACK
+2025-09-16 20:31:26,345 [INFO] 127.0.0.1 - - [16/Sep/2025 20:31:26] "GET /patients/1 HTTP/1.1" 200 -
+2025-09-16 20:31:49,828 [INFO] BEGIN (implicit)
+2025-09-16 20:31:49,829 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+ LIMIT ? OFFSET ?
+2025-09-16 20:31:49,829 [INFO] [cached since 122.2s ago] (1, 1, 0)
+2025-09-16 20:31:49,830 [INFO] UPDATE patients SET age=? WHERE patients.id = ?
+2025-09-16 20:31:49,830 [INFO] [generated in 0.00012s] (30, 1)
+2025-09-16 20:31:49,831 [INFO] COMMIT
+2025-09-16 20:31:49,832 [INFO] BEGIN (implicit)
+2025-09-16 20:31:49,833 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+2025-09-16 20:31:49,833 [INFO] [generated in 0.00024s] (1,)
+2025-09-16 20:31:49,833 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+ LIMIT ? OFFSET ?
+2025-09-16 20:31:49,833 [INFO] [cached since 122.2s ago] (1, 1, 0)
+2025-09-16 20:31:49,834 [INFO] ROLLBACK
+2025-09-16 20:31:49,834 [INFO] 127.0.0.1 - - [16/Sep/2025 20:31:49] "PUT /patients/1 HTTP/1.1" 200 -
+2025-09-16 20:35:25,007 [INFO]  * Detected change in '/Users/lmoravin/Documents/CorePython/cisco_py_250909/Project/hms/client/cli.py', reloading
+2025-09-16 20:35:25,040 [INFO]  * Restarting with stat
+2025-09-16 20:35:25,325 [INFO] BEGIN (implicit)
+2025-09-16 20:35:25,326 [INFO] PRAGMA main.table_info("patients")
+2025-09-16 20:35:25,326 [INFO] [raw sql] ()
+2025-09-16 20:35:25,326 [INFO] COMMIT
+2025-09-16 20:35:25,350 [WARNING]  * Debugger is active!
+2025-09-16 20:35:25,356 [INFO]  * Debugger PIN: 130-375-740
+2025-09-16 20:36:17,216 [INFO] BEGIN (implicit)
+2025-09-16 20:36:17,216 [INFO] PRAGMA main.table_info("patients")
+2025-09-16 20:36:17,216 [INFO] [raw sql] ()
+2025-09-16 20:36:17,217 [INFO] COMMIT
+2025-09-16 20:36:17,241 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-09-16 20:36:17,241 [INFO] [33mPress CTRL+C to quit[0m
+2025-09-16 20:36:17,242 [INFO]  * Restarting with stat
+2025-09-16 20:36:17,448 [INFO] BEGIN (implicit)
+2025-09-16 20:36:17,448 [INFO] PRAGMA main.table_info("patients")
+2025-09-16 20:36:17,448 [INFO] [raw sql] ()
+2025-09-16 20:36:17,448 [INFO] COMMIT
+2025-09-16 20:36:17,467 [WARNING]  * Debugger is active!
+2025-09-16 20:36:17,473 [INFO]  * Debugger PIN: 130-375-740
+2025-09-16 20:36:42,086 [INFO] BEGIN (implicit)
+2025-09-16 20:36:42,088 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients
+2025-09-16 20:36:42,088 [INFO] [generated in 0.00028s] ()
+2025-09-16 20:36:42,089 [INFO] ROLLBACK
+2025-09-16 20:36:42,089 [INFO] 127.0.0.1 - - [16/Sep/2025 20:36:42] "GET /patients HTTP/1.1" 200 -
+2025-09-16 20:38:21,796 [INFO] BEGIN (implicit)
+2025-09-16 20:38:21,799 [INFO] INSERT INTO patients (id, name, age, disease) VALUES (?, ?, ?, ?)
+2025-09-16 20:38:21,799 [INFO] [generated in 0.00032s] (2, 'Charan', 29, 'Asthma')
+2025-09-16 20:38:21,800 [INFO] COMMIT
+2025-09-16 20:38:21,803 [INFO] BEGIN (implicit)
+2025-09-16 20:38:21,805 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+ LIMIT ? OFFSET ?
+2025-09-16 20:38:21,805 [INFO] [generated in 0.00035s] (2, 1, 0)
+2025-09-16 20:38:25,392 [INFO] Email sent successfully to lasyam2023@gmail.com with subject: 2025-09-16 20:38:21 Patient Charan Registered.
+2025-09-16 20:38:25,396 [INFO] ROLLBACK
+2025-09-16 20:38:25,398 [INFO] 127.0.0.1 - - [16/Sep/2025 20:38:25] "POST /patients HTTP/1.1" 200 -
+2025-09-16 20:38:34,292 [INFO] BEGIN (implicit)
+2025-09-16 20:38:34,292 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients
+2025-09-16 20:38:34,292 [INFO] [cached since 112.2s ago] ()
+2025-09-16 20:38:34,292 [INFO] ROLLBACK
+2025-09-16 20:38:34,293 [INFO] 127.0.0.1 - - [16/Sep/2025 20:38:34] "GET /patients HTTP/1.1" 200 -
+2025-09-16 20:39:09,594 [INFO] BEGIN (implicit)
+2025-09-16 20:39:09,595 [INFO] INSERT INTO patients (id, name, age, disease) VALUES (?, ?, ?, ?)
+2025-09-16 20:39:09,595 [INFO] [cached since 47.8s ago] (3, 'Rahul', 45, 'Diabetes')
+2025-09-16 20:39:09,596 [INFO] COMMIT
+2025-09-16 20:39:09,599 [INFO] BEGIN (implicit)
+2025-09-16 20:39:09,600 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+ LIMIT ? OFFSET ?
+2025-09-16 20:39:09,600 [INFO] [cached since 47.8s ago] (3, 1, 0)
+2025-09-16 20:39:13,393 [INFO] Email sent successfully to lasyam2023@gmail.com with subject: 2025-09-16 20:39:09 Patient Rahul Registered.
+2025-09-16 20:39:13,396 [INFO] ROLLBACK
+2025-09-16 20:39:13,397 [INFO] 127.0.0.1 - - [16/Sep/2025 20:39:13] "POST /patients HTTP/1.1" 200 -
+2025-09-16 20:39:15,773 [INFO] BEGIN (implicit)
+2025-09-16 20:39:15,774 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients
+2025-09-16 20:39:15,774 [INFO] [cached since 153.7s ago] ()
+2025-09-16 20:39:15,774 [INFO] ROLLBACK
+2025-09-16 20:39:15,775 [INFO] 127.0.0.1 - - [16/Sep/2025 20:39:15] "GET /patients HTTP/1.1" 200 -
+2025-09-16 20:40:00,649 [INFO] BEGIN (implicit)
+2025-09-16 20:40:00,650 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+ LIMIT ? OFFSET ?
+2025-09-16 20:40:00,650 [INFO] [cached since 98.85s ago] (3, 1, 0)
+2025-09-16 20:40:00,651 [INFO] ROLLBACK
+2025-09-16 20:40:00,651 [INFO] 127.0.0.1 - - [16/Sep/2025 20:40:00] "GET /patients/3 HTTP/1.1" 200 -
+2025-09-16 20:40:18,902 [INFO] BEGIN (implicit)
+2025-09-16 20:40:18,902 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+ LIMIT ? OFFSET ?
+2025-09-16 20:40:18,902 [INFO] [cached since 117.1s ago] (1, 1, 0)
+2025-09-16 20:40:18,902 [INFO] ROLLBACK
+2025-09-16 20:40:18,902 [INFO] 127.0.0.1 - - [16/Sep/2025 20:40:18] "GET /patients/1 HTTP/1.1" 200 -
+2025-09-16 20:40:33,637 [INFO] BEGIN (implicit)
+2025-09-16 20:40:33,638 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+ LIMIT ? OFFSET ?
+2025-09-16 20:40:33,638 [INFO] [cached since 131.8s ago] (1, 1, 0)
+2025-09-16 20:40:33,641 [INFO] UPDATE patients SET age=? WHERE patients.id = ?
+2025-09-16 20:40:33,641 [INFO] [generated in 0.00030s] (32, 1)
+2025-09-16 20:40:33,643 [INFO] COMMIT
+2025-09-16 20:40:33,645 [INFO] BEGIN (implicit)
+2025-09-16 20:40:33,646 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+2025-09-16 20:40:33,647 [INFO] [generated in 0.00022s] (1,)
+2025-09-16 20:40:33,648 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+ LIMIT ? OFFSET ?
+2025-09-16 20:40:33,648 [INFO] [cached since 131.8s ago] (1, 1, 0)
+2025-09-16 20:40:33,649 [INFO] ROLLBACK
+2025-09-16 20:40:33,649 [INFO] 127.0.0.1 - - [16/Sep/2025 20:40:33] "PUT /patients/1 HTTP/1.1" 200 -
+2025-09-16 20:40:37,315 [INFO] BEGIN (implicit)
+2025-09-16 20:40:37,315 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients
+2025-09-16 20:40:37,316 [INFO] [cached since 235.2s ago] ()
+2025-09-16 20:40:37,317 [INFO] ROLLBACK
+2025-09-16 20:40:37,318 [INFO] 127.0.0.1 - - [16/Sep/2025 20:40:37] "GET /patients HTTP/1.1" 200 -
+2025-09-16 21:59:32,016 [INFO] BEGIN (implicit)
+2025-09-16 21:59:32,016 [INFO] COMMIT
+2025-09-16 21:59:32,047 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-09-16 21:59:32,047 [INFO] [33mPress CTRL+C to quit[0m
+2025-09-16 21:59:32,047 [INFO]  * Restarting with stat
+2025-09-16 21:59:32,255 [INFO] BEGIN (implicit)
+2025-09-16 21:59:32,255 [INFO] COMMIT
+2025-09-16 21:59:32,273 [WARNING]  * Debugger is active!
+2025-09-16 21:59:32,281 [INFO]  * Debugger PIN: 130-375-740
+2025-09-16 21:59:44,388 [INFO] 127.0.0.1 - - [16/Sep/2025 21:59:44] "[35m[1mGET /patients HTTP/1.1[0m" 500 -
+2025-09-16 22:03:52,058 [INFO]  * Detected change in '/Users/lmoravin/Documents/CorePython/cisco_py_250909/Project/hms/app/db.py', reloading
+2025-09-16 22:03:52,093 [INFO]  * Restarting with stat
+2025-09-16 22:03:52,383 [INFO] BEGIN (implicit)
+2025-09-16 22:03:52,383 [INFO] COMMIT
+2025-09-16 22:03:52,407 [WARNING]  * Debugger is active!
+2025-09-16 22:03:52,413 [INFO]  * Debugger PIN: 130-375-740
+2025-09-16 22:04:34,790 [INFO]  * Detected change in '/Users/lmoravin/Documents/CorePython/cisco_py_250909/Project/hms/app/emailer.py', reloading
+2025-09-16 22:04:34,823 [INFO]  * Restarting with stat
+2025-09-16 22:13:57,810 [INFO] BEGIN (implicit)
+2025-09-16 22:13:57,810 [INFO] PRAGMA main.table_info("patients")
+2025-09-16 22:13:57,810 [INFO] [raw sql] ()
+2025-09-16 22:13:57,811 [INFO] COMMIT
+2025-09-16 22:13:57,842 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-09-16 22:13:57,842 [INFO] [33mPress CTRL+C to quit[0m
+2025-09-16 22:13:57,843 [INFO]  * Restarting with stat
+2025-09-16 22:13:58,052 [INFO] BEGIN (implicit)
+2025-09-16 22:13:58,052 [INFO] PRAGMA main.table_info("patients")
+2025-09-16 22:13:58,052 [INFO] [raw sql] ()
+2025-09-16 22:13:58,053 [INFO] COMMIT
+2025-09-16 22:13:58,070 [WARNING]  * Debugger is active!
+2025-09-16 22:13:58,076 [INFO]  * Debugger PIN: 130-375-740
+2025-09-16 22:14:05,625 [INFO] BEGIN (implicit)
+2025-09-16 22:14:05,627 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients
+2025-09-16 22:14:05,627 [INFO] [generated in 0.00037s] ()
+2025-09-16 22:14:05,628 [INFO] ROLLBACK
+2025-09-16 22:14:05,628 [INFO] 127.0.0.1 - - [16/Sep/2025 22:14:05] "GET /patients HTTP/1.1" 200 -
+2025-09-16 22:14:19,629 [INFO] BEGIN (implicit)
+2025-09-16 22:14:19,631 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+ LIMIT ? OFFSET ?
+2025-09-16 22:14:19,631 [INFO] [generated in 0.00038s] (2, 1, 0)
+2025-09-16 22:14:19,633 [INFO] ROLLBACK
+2025-09-16 22:14:19,633 [INFO] 127.0.0.1 - - [16/Sep/2025 22:14:19] "GET /patients/2 HTTP/1.1" 200 -
+2025-09-16 22:14:33,327 [INFO] BEGIN (implicit)
+2025-09-16 22:14:33,328 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+ LIMIT ? OFFSET ?
+2025-09-16 22:14:33,328 [INFO] [cached since 13.7s ago] (2, 1, 0)
+2025-09-16 22:14:33,329 [INFO] ROLLBACK
+2025-09-16 22:14:33,329 [INFO] 127.0.0.1 - - [16/Sep/2025 22:14:33] "GET /patients/2 HTTP/1.1" 200 -
+2025-09-16 22:14:38,844 [INFO] BEGIN (implicit)
+2025-09-16 22:14:38,845 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+ LIMIT ? OFFSET ?
+2025-09-16 22:14:38,845 [INFO] [cached since 19.21s ago] (2, 1, 0)
+2025-09-16 22:14:38,848 [INFO] UPDATE patients SET age=? WHERE patients.id = ?
+2025-09-16 22:14:38,848 [INFO] [generated in 0.00027s] (28, 2)
+2025-09-16 22:14:38,849 [INFO] COMMIT
+2025-09-16 22:14:38,852 [INFO] BEGIN (implicit)
+2025-09-16 22:14:38,853 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+2025-09-16 22:14:38,853 [INFO] [generated in 0.00020s] (2,)
+2025-09-16 22:14:38,854 [INFO] ROLLBACK
+2025-09-16 22:14:38,854 [INFO] 127.0.0.1 - - [16/Sep/2025 22:14:38] "PUT /patients/2 HTTP/1.1" 200 -
+2025-09-16 22:14:41,082 [INFO] BEGIN (implicit)
+2025-09-16 22:14:41,083 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients
+2025-09-16 22:14:41,083 [INFO] [cached since 35.46s ago] ()
+2025-09-16 22:14:41,084 [INFO] ROLLBACK
+2025-09-16 22:14:41,084 [INFO] 127.0.0.1 - - [16/Sep/2025 22:14:41] "GET /patients HTTP/1.1" 200 -
+2025-09-16 22:15:24,279 [INFO] BEGIN (implicit)
+2025-09-16 22:15:24,280 [INFO] INSERT INTO patients (id, name, age, disease) VALUES (?, ?, ?, ?)
+2025-09-16 22:15:24,281 [INFO] [generated in 0.00029s] (4, 'Shruti', 35, 'Asthma')
+2025-09-16 22:15:24,282 [INFO] COMMIT
+2025-09-16 22:15:24,285 [INFO] BEGIN (implicit)
+2025-09-16 22:15:24,286 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+ LIMIT ? OFFSET ?
+2025-09-16 22:15:24,286 [INFO] [cached since 64.65s ago] (4, 1, 0)
+2025-09-16 22:15:28,772 [INFO] Email sent successfully to lasyam2023@gmail.com with subject: 2025-09-16 22:15:24 Patient Shruti Created
+2025-09-16 22:15:28,775 [INFO] ROLLBACK
+2025-09-16 22:15:28,777 [INFO] 127.0.0.1 - - [16/Sep/2025 22:15:28] "POST /patients HTTP/1.1" 200 -
+2025-09-16 22:15:45,689 [INFO] BEGIN (implicit)
+2025-09-16 22:15:45,689 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients
+2025-09-16 22:15:45,689 [INFO] [cached since 100.1s ago] ()
+2025-09-16 22:15:45,691 [INFO] ROLLBACK
+2025-09-16 22:15:45,691 [INFO] 127.0.0.1 - - [16/Sep/2025 22:15:45] "GET /patients HTTP/1.1" 200 -
+2025-09-16 22:17:35,054 [INFO] BEGIN (implicit)
+2025-09-16 22:17:35,054 [INFO] INSERT INTO patients (id, name, age, disease) VALUES (?, ?, ?, ?)
+2025-09-16 22:17:35,054 [INFO] [cached since 130.8s ago] (1, 'Avinash', 40, 'Diabetes')
+2025-09-16 22:17:35,054 [INFO] ROLLBACK
+2025-09-16 22:17:35,083 [INFO] 127.0.0.1 - - [16/Sep/2025 22:17:35] "[35m[1mPOST /patients HTTP/1.1[0m" 500 -
+2025-09-16 22:18:53,503 [INFO] BEGIN (implicit)
+2025-09-16 22:18:53,504 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients
+2025-09-16 22:18:53,504 [INFO] [cached since 287.8s ago] ()
+2025-09-16 22:18:53,504 [INFO] ROLLBACK
+2025-09-16 22:18:53,505 [INFO] 127.0.0.1 - - [16/Sep/2025 22:18:53] "GET /patients HTTP/1.1" 200 -
