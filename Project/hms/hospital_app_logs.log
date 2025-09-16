@@ -362,3 +362,182 @@ FROM patients
 2025-09-16 22:40:07,327 [INFO] [cached since 513.3s ago] ()
 2025-09-16 22:40:07,328 [INFO] ROLLBACK
 2025-09-16 22:40:07,329 [INFO] 127.0.0.1 - - [16/Sep/2025 22:40:07] "GET /patients HTTP/1.1" 200 -
+2025-09-16 22:58:03,744 [INFO]  * Detected change in '/Users/lmoravin/Documents/CorePython/cisco_py_250909/Project/hms/app/crud.py', reloading
+2025-09-16 22:58:03,775 [INFO]  * Restarting with stat
+2025-09-16 22:58:04,069 [INFO] BEGIN (implicit)
+2025-09-16 22:58:04,069 [INFO] PRAGMA main.table_info("patients")
+2025-09-16 22:58:04,069 [INFO] [raw sql] ()
+2025-09-16 22:58:04,069 [INFO] COMMIT
+2025-09-16 22:58:04,091 [WARNING]  * Debugger is active!
+2025-09-16 22:58:04,098 [INFO]  * Debugger PIN: 130-375-740
+2025-09-16 22:58:27,507 [INFO]  * Detected change in '/Users/lmoravin/Documents/CorePython/cisco_py_250909/Project/hms/app/routes.py', reloading
+2025-09-16 22:58:27,540 [INFO]  * Restarting with stat
+2025-09-16 22:58:27,757 [INFO] BEGIN (implicit)
+2025-09-16 22:58:27,757 [INFO] PRAGMA main.table_info("patients")
+2025-09-16 22:58:27,757 [INFO] [raw sql] ()
+2025-09-16 22:58:27,757 [INFO] COMMIT
+2025-09-16 22:58:27,775 [WARNING]  * Debugger is active!
+2025-09-16 22:58:27,781 [INFO]  * Debugger PIN: 130-375-740
+2025-09-16 22:58:41,298 [INFO] BEGIN (implicit)
+2025-09-16 22:58:41,302 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+ LIMIT ? OFFSET ?
+2025-09-16 22:58:41,302 [INFO] [generated in 0.00038s] (8, 1, 0)
+2025-09-16 22:58:41,303 [WARNING] Patient with id 8 not found.
+2025-09-16 22:58:41,304 [INFO] ROLLBACK
+2025-09-16 22:58:41,304 [INFO] 127.0.0.1 - - [16/Sep/2025 22:58:41] "[33mGET /patients/8 HTTP/1.1[0m" 404 -
+2025-09-16 22:59:16,505 [INFO]  * Detected change in '/Users/lmoravin/Documents/CorePython/cisco_py_250909/Project/hms/app/crud.py', reloading
+2025-09-16 22:59:16,540 [INFO]  * Restarting with stat
+2025-09-16 22:59:16,770 [INFO] BEGIN (implicit)
+2025-09-16 22:59:16,771 [INFO] PRAGMA main.table_info("patients")
+2025-09-16 22:59:16,771 [INFO] [raw sql] ()
+2025-09-16 22:59:16,771 [INFO] COMMIT
+2025-09-16 22:59:16,790 [WARNING]  * Debugger is active!
+2025-09-16 22:59:16,799 [INFO]  * Debugger PIN: 130-375-740
+2025-09-16 22:59:40,073 [INFO]  * Detected change in '/Users/lmoravin/Documents/CorePython/cisco_py_250909/Project/hms/app/routes.py', reloading
+2025-09-16 22:59:40,106 [INFO]  * Restarting with stat
+2025-09-16 22:59:40,338 [INFO] BEGIN (implicit)
+2025-09-16 22:59:40,338 [INFO] PRAGMA main.table_info("patients")
+2025-09-16 22:59:40,338 [INFO] [raw sql] ()
+2025-09-16 22:59:40,338 [INFO] COMMIT
+2025-09-16 22:59:40,358 [WARNING]  * Debugger is active!
+2025-09-16 22:59:40,364 [INFO]  * Debugger PIN: 130-375-740
+2025-09-16 22:59:48,845 [INFO]  * Detected change in '/Users/lmoravin/Documents/CorePython/cisco_py_250909/Project/hms/app/routes.py', reloading
+2025-09-16 22:59:48,879 [INFO]  * Restarting with stat
+2025-09-16 22:59:49,101 [INFO] BEGIN (implicit)
+2025-09-16 22:59:49,101 [INFO] PRAGMA main.table_info("patients")
+2025-09-16 22:59:49,101 [INFO] [raw sql] ()
+2025-09-16 22:59:49,102 [INFO] COMMIT
+2025-09-16 22:59:49,120 [WARNING]  * Debugger is active!
+2025-09-16 22:59:49,127 [INFO]  * Debugger PIN: 130-375-740
+2025-09-16 22:59:55,529 [INFO]  * Detected change in '/Users/lmoravin/Documents/CorePython/cisco_py_250909/Project/hms/app/routes.py', reloading
+2025-09-16 22:59:55,569 [INFO]  * Restarting with stat
+2025-09-16 22:59:55,795 [INFO] BEGIN (implicit)
+2025-09-16 22:59:55,795 [INFO] PRAGMA main.table_info("patients")
+2025-09-16 22:59:55,796 [INFO] [raw sql] ()
+2025-09-16 22:59:55,796 [INFO] COMMIT
+2025-09-16 22:59:55,816 [WARNING]  * Debugger is active!
+2025-09-16 22:59:55,821 [INFO]  * Debugger PIN: 130-375-740
+2025-09-16 23:00:09,793 [INFO] BEGIN (implicit)
+2025-09-16 23:00:09,795 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients
+2025-09-16 23:00:09,796 [INFO] [generated in 0.00029s] ()
+2025-09-16 23:00:09,796 [INFO] Retrieved all patients, count=4
+2025-09-16 23:00:09,797 [INFO] ROLLBACK
+2025-09-16 23:00:09,797 [INFO] 127.0.0.1 - - [16/Sep/2025 23:00:09] "GET /patients HTTP/1.1" 200 -
+2025-09-16 23:00:22,092 [INFO] BEGIN (implicit)
+2025-09-16 23:00:22,095 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+ LIMIT ? OFFSET ?
+2025-09-16 23:00:22,095 [INFO] [generated in 0.00053s] (8, 1, 0)
+2025-09-16 23:00:22,096 [ERROR] Patient with id 8 not found.
+2025-09-16 23:00:22,096 [INFO] ROLLBACK
+2025-09-16 23:00:22,096 [INFO] 127.0.0.1 - - [16/Sep/2025 23:00:22] "[33mGET /patients/8 HTTP/1.1[0m" 404 -
+2025-09-16 23:09:48,026 [INFO]  * Detected change in '/Users/lmoravin/Documents/CorePython/cisco_py_250909/Project/hms/app/crud.py', reloading
+2025-09-16 23:09:48,062 [INFO]  * Restarting with stat
+2025-09-16 23:09:48,376 [INFO] BEGIN (implicit)
+2025-09-16 23:09:48,376 [INFO] PRAGMA main.table_info("patients")
+2025-09-16 23:09:48,376 [INFO] [raw sql] ()
+2025-09-16 23:09:48,376 [INFO] COMMIT
+2025-09-16 23:09:48,400 [WARNING]  * Debugger is active!
+2025-09-16 23:09:48,407 [INFO]  * Debugger PIN: 130-375-740
+2025-09-16 23:10:19,146 [INFO]  * Detected change in '/Users/lmoravin/Documents/CorePython/cisco_py_250909/Project/hms/app/routes.py', reloading
+2025-09-16 23:10:19,183 [INFO]  * Restarting with stat
+2025-09-16 23:10:19,494 [INFO] BEGIN (implicit)
+2025-09-16 23:10:19,494 [INFO] PRAGMA main.table_info("patients")
+2025-09-16 23:10:19,494 [INFO] [raw sql] ()
+2025-09-16 23:10:19,495 [INFO] COMMIT
+2025-09-16 23:10:19,516 [WARNING]  * Debugger is active!
+2025-09-16 23:10:19,522 [INFO]  * Debugger PIN: 130-375-740
+2025-09-16 23:10:28,069 [INFO] BEGIN (implicit)
+2025-09-16 23:10:28,071 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients
+2025-09-16 23:10:28,071 [INFO] [generated in 0.00017s] ()
+2025-09-16 23:10:28,071 [INFO] Read all patients, count: 4
+2025-09-16 23:10:28,072 [INFO] ROLLBACK
+2025-09-16 23:10:28,072 [INFO] 127.0.0.1 - - [16/Sep/2025 23:10:28] "GET /patients HTTP/1.1" 200 -
+2025-09-16 23:10:34,019 [INFO] BEGIN (implicit)
+2025-09-16 23:10:34,020 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+ LIMIT ? OFFSET ?
+2025-09-16 23:10:34,021 [INFO] [generated in 0.00027s] (9, 1, 0)
+2025-09-16 23:10:34,021 [WARNING] Patient 9 not found
+2025-09-16 23:10:34,021 [INFO] ROLLBACK
+2025-09-16 23:10:34,022 [INFO] 127.0.0.1 - - [16/Sep/2025 23:10:34] "[33mGET /patients/9 HTTP/1.1[0m" 404 -
+2025-09-16 23:12:17,125 [INFO]  * Detected change in '/Users/lmoravin/Documents/CorePython/cisco_py_250909/Project/hms/app/crud.py', reloading
+2025-09-16 23:12:17,163 [INFO]  * Restarting with stat
+2025-09-16 23:12:17,389 [INFO] BEGIN (implicit)
+2025-09-16 23:12:17,390 [INFO] PRAGMA main.table_info("patients")
+2025-09-16 23:12:17,390 [INFO] [raw sql] ()
+2025-09-16 23:12:17,390 [INFO] COMMIT
+2025-09-16 23:12:17,408 [WARNING]  * Debugger is active!
+2025-09-16 23:12:17,414 [INFO]  * Debugger PIN: 130-375-740
+2025-09-16 23:12:23,545 [INFO] BEGIN (implicit)
+2025-09-16 23:12:23,547 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+ LIMIT ? OFFSET ?
+2025-09-16 23:12:23,547 [INFO] [generated in 0.00022s] (6, 1, 0)
+2025-09-16 23:12:23,547 [ERROR] Patient 6 not found
+2025-09-16 23:12:23,548 [INFO] ROLLBACK
+2025-09-16 23:12:23,548 [INFO] 127.0.0.1 - - [16/Sep/2025 23:12:23] "[33mGET /patients/6 HTTP/1.1[0m" 404 -
+2025-09-16 23:31:30,583 [INFO] BEGIN (implicit)
+2025-09-16 23:31:30,583 [INFO] PRAGMA main.table_info("patients")
+2025-09-16 23:31:30,583 [INFO] [raw sql] ()
+2025-09-16 23:31:30,584 [INFO] COMMIT
+2025-09-16 23:31:30,620 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-09-16 23:31:30,620 [INFO] [33mPress CTRL+C to quit[0m
+2025-09-16 23:31:30,620 [INFO]  * Restarting with stat
+2025-09-16 23:31:30,835 [INFO] BEGIN (implicit)
+2025-09-16 23:31:30,835 [INFO] PRAGMA main.table_info("patients")
+2025-09-16 23:31:30,835 [INFO] [raw sql] ()
+2025-09-16 23:31:30,835 [INFO] COMMIT
+2025-09-16 23:31:30,851 [WARNING]  * Debugger is active!
+2025-09-16 23:31:30,858 [INFO]  * Debugger PIN: 130-375-740
+2025-09-16 23:31:36,651 [INFO] BEGIN (implicit)
+2025-09-16 23:31:36,654 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients
+2025-09-16 23:31:36,654 [INFO] [generated in 0.00025s] ()
+2025-09-16 23:31:36,655 [INFO] Read all patients, count: 4
+2025-09-16 23:31:36,655 [INFO] ROLLBACK
+2025-09-16 23:31:36,656 [INFO] 127.0.0.1 - - [16/Sep/2025 23:31:36] "GET /patients HTTP/1.1" 200 -
+2025-09-16 23:31:43,757 [INFO] BEGIN (implicit)
+2025-09-16 23:31:43,758 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+ LIMIT ? OFFSET ?
+2025-09-16 23:31:43,758 [INFO] [generated in 0.00020s] (4, 1, 0)
+2025-09-16 23:31:43,759 [INFO] ROLLBACK
+2025-09-16 23:31:43,759 [INFO] 127.0.0.1 - - [16/Sep/2025 23:31:43] "GET /patients/4 HTTP/1.1" 200 -
+2025-09-16 23:32:00,894 [INFO] BEGIN (implicit)
+2025-09-16 23:32:00,895 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+ LIMIT ? OFFSET ?
+2025-09-16 23:32:00,895 [INFO] [cached since 17.14s ago] (9, 1, 0)
+2025-09-16 23:32:00,896 [ERROR] Patient 9 not found
+2025-09-16 23:32:00,896 [WARNING] Patient not found: Patient with ID 9 not found.
+2025-09-16 23:32:00,896 [INFO] ROLLBACK
+2025-09-16 23:32:00,897 [INFO] 127.0.0.1 - - [16/Sep/2025 23:32:00] "[33mGET /patients/9 HTTP/1.1[0m" 404 -
+2025-09-16 23:32:11,533 [INFO] BEGIN (implicit)
+2025-09-16 23:32:11,533 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+ LIMIT ? OFFSET ?
+2025-09-16 23:32:11,533 [INFO] [cached since 27.78s ago] (6, 1, 0)
+2025-09-16 23:32:11,534 [ERROR] Patient 6 not found for deletion
+2025-09-16 23:32:11,534 [WARNING] Patient not found: Patient with ID 6 not found.
+2025-09-16 23:32:11,534 [INFO] ROLLBACK
+2025-09-16 23:32:11,534 [INFO] 127.0.0.1 - - [16/Sep/2025 23:32:11] "[33mDELETE /patients/6 HTTP/1.1[0m" 404 -
+2025-09-16 23:32:53,544 [INFO]  * Detected change in '/Users/lmoravin/Documents/CorePython/cisco_py_250909/Project/hms/app/routes.py', reloading
+2025-09-16 23:32:53,576 [INFO]  * Restarting with stat
+2025-09-16 23:32:53,795 [INFO] BEGIN (implicit)
+2025-09-16 23:32:53,795 [INFO] PRAGMA main.table_info("patients")
+2025-09-16 23:32:53,795 [INFO] [raw sql] ()
+2025-09-16 23:32:53,796 [INFO] COMMIT
+2025-09-16 23:32:53,814 [WARNING]  * Debugger is active!
+2025-09-16 23:32:53,820 [INFO]  * Debugger PIN: 130-375-740
