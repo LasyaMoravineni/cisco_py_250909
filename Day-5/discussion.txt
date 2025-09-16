@@ -1,0 +1,90 @@
+python - function - module 
+    - app -> two module -> import 
+python data structures - composite/derived type - list/dict/tuple
+    - app -> binary db, json db
+    - debugging  
+python - exc, log, package, unit test, sql 
+    -> some of the apps 
+
+
+pylint 
+    - static analyser 
+
+--------------------------------------------------------------
+
+REST API (< Web Service) == HTTP Based Web Service 
+    API - Application Programming Interface + Library 
+    API nowdays == Web Service or Web / REST API
+
+    Swiggy / Amazon / Whatsapp 
+
+
+Web Service : HTTP + SOAP : XML+Schema 
+
+HTML5 / CSS3 -> 2011 -> HTTP -> REST API 
+    Java App | Py App | C# App | JS App 
+
+Web Service App vs Web App 
+    Service         Page 
+    Resources/Data  HTML+Forms 
+
+Server                Client 
+Backend Application + FrontEnd Application 
+Java                    React JS  
+Python                  Angular     + Native Development 
+C#                      VUE JS 
+JS 
+Go 
+
+
+Database 
+SQL                 vs      NOSQL 
+sqlite                      MONGO 
+Oracle                      CASSANDRA 
+Sql Server
+MySQL 
+Postgres 
+
+--------------------------------------------------------------
+
+REST API - Web Services (Stateless) - HTTP Based 
+    - microservices 
+--------------------------------------------------------------
+https://jsonplaceholder.typicode.com/
+
+    /todos APIS 
+
+    We comsume APIS in the API client tools such as VSC Thunder Client, POSTMAN.
+
+    Consuming todos APIS 
+
+    Base URL: https://jsonplaceholder.typicode.com
+    API : API EndPoint
+           http 
+           method       URL 
+        1. POST         /todos          Create ToDo
+           REQUEST BODY: {
+                "userId": 1,
+                "title": "Python Flask API Development",
+                "completed": false
+            }
+            RESPONSE: 
+                Status = 201:Created 
+                Created todo JSON 
+        2. GET          /todos          Read All ToDo 
+            RESPONSE : Status = 200:OK 
+                Array of todos JSON 
+        3. GET          /todos/3        READ ToDo By ID = 3
+            RESPONSE:  Status = 200:OK 
+                todo instance JSON 
+        4. PUT          /todos/3        Update ToDo By ID = 3
+            REQUEST BODY: {
+                "userId": 1,
+                "title": "Python Flask API Development",
+                "completed": true 
+            }
+            RESPONSE : Status = 200:OK 
+                Updated todo instance JSON 
+        5. DELETE       /todos/3        Delete ToDo By ID = 3
+            RESPONSE: 
+                Status = 200:OK 
