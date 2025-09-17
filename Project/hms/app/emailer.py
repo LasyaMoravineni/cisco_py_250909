@@ -1,8 +1,8 @@
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from app.exceptions import EmailError
-from app.logger import logger
+from hms.app.exceptions import EmailError
+from hms.app.logger import logger
 
 # Configs (in real-world projects, load from env vars)
 FROM_ADDRESS = "lasyamacs08@gmail.com"
