@@ -1,16 +1,21 @@
 """
-db.py - Database initialization
+db.py - Database initialization for the HMS application.
 """
 
-from hms.app.config import config
 from flask_sqlalchemy import SQLAlchemy
+
+from hms.app.config import config
 
 db = SQLAlchemy()
 
 
 def init_db(application):
-    
-    """Initialize database with Flask app"""
+    """
+    Initialize the database with the given Flask application.
+
+    Args:
+        application (Flask): The Flask app instance.
+    """
     if "sqlalchemy" not in application.extensions:
         application.config["SQLALCHEMY_DATABASE_URI"] = config["DB_URL"]
         application.config["SQLALCHEMY_ECHO"] = True

@@ -9,10 +9,9 @@ from hms.app.exceptions import HMSException
 from hms.app.logger import logger
 
 
-class ScraperError(HMSException):
+class ScraperError(HMSException):  # pylint: disable=too-few-public-methods
     """Raised when scraping fails"""
-    def __init__(self, message="Failed to scrape website"):
-        super().__init__(message)
+    pass
 
 
 def scrape_medical_news(url="https://example.com/medical-news", limit=5):

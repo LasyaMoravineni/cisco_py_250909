@@ -1,7 +1,11 @@
 """
-routes.py - Flask routes for Hospital Management System (Patients CRUD)
-Handles patient creation, reading, updating, and deletion
-with proper exception handling and logging.
+routes.py - Flask routes for Hospital Management System (Patients CRUD).
+
+This module defines API endpoints for:
+- Creating, reading, updating, and deleting patients.
+- Sending email notifications on patient creation.
+- Scraping external medical news.
+- Logging and centralized exception handling.
 """
 
 from datetime import datetime
@@ -38,16 +42,16 @@ def create_patient():
         )
         try:
             emailer.send_email(emailer.TO_ADDRESS, subject, body)
-        except EmailError as e:
-            logger.error(f"Email sending failed: {e}")
+        except EmailError as err:
+            logger.error("Email sending failed: %s", err)
 
         return jsonify(saved_patient)
 
-    except DatabaseError as e:
-        logger.error(f"Database error in create_patient: {e}")
-        return jsonify({"error": str(e)}), 400
-    except Exception as e:
-        logger.error(f"Unexpected error in create_patient: {e}")
+    except DatabaseError as err:
+        logger.error("Database error in create_patient: %s", err)
+        return jsonify({"error": str(err)}), 400
+    except Exception as err:  # pylint: disable=broad-exception-caught
+        logger.error("Unexpected error in create_patient: %s", err)
         return jsonify({"error": "Internal server error"}), 500
 
 
@@ -57,11 +61,11 @@ def read_all_patients():
     try:
         patients = crud.read_all_patients()
         return jsonify(patients)
-    except DatabaseError as e:
-        logger.error(f"Database error in read_all_patients: {e}")
-        return jsonify({"error": str(e)}), 500
-    except Exception as e:
-        logger.error(f"Unexpected error in read_all_patients: {e}")
+    except DatabaseError as err:
+        logger.error("Database error in read_all_patients: %s", err)
+        return jsonify({"error": str(err)}), 500
+    except Exception as err:  # pylint: disable=broad-exception-caught
+        logger.error("Unexpected error in read_all_patients: %s", err)
         return jsonify({"error": "Internal server error"}), 500
 
 
@@ -71,25 +75,28 @@ def read_patient_by_id(patient_id):
     try:
         patient = crud.read_by_id(patient_id)
         return jsonify(patient)
-    except PatientNotFoundError as e:
-        logger.error(f"Patient not found: {e}")
-        return jsonify({"error": str(e)}), 404
-    except DatabaseError as e:
-        logger.error(f"Database error in read_patient_by_id: {e}")
-        return jsonify({"error": str(e)}), 500
-    except Exception as e:
-        logger.error(f"Unexpected error in read_patient_by_id: {e}")
+    except PatientNotFoundError as err:
+        logger.error("Patient not found: %s", err)
+        return jsonify({"error": str(err)}), 404
+    except DatabaseError as err:
+        logger.error("Database error in read_patient_by_id: %s", err)
+        return jsonify({"error": str(err)}), 500
+    except Exception as err:  # pylint: disable=broad-exception-caught
+        logger.error("Unexpected error in read_patient_by_id: %s", err)
         return jsonify({"error": "Internal server error"}), 500
+
 
 @application.route("/news", methods=["GET"])
 def get_news():
+    """Return scraped medical news articles as JSON."""
     try:
         news = scrape_medical_news()
         return jsonify(news)
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
-    
-    
+    except Exception as err:  # pylint: disable=broad-exception-caught
+        logger.error("Unexpected error in get_news: %s", err)
+        return jsonify({"error": str(err)}), 500
+
+
 @application.route("/patients/<int:patient_id>", methods=["PUT"])
 def update_patient(patient_id):
     """Update an existing patient's details."""
@@ -97,14 +104,14 @@ def update_patient(patient_id):
         patient_dict = request.json
         updated_patient = crud.update(patient_id, patient_dict)
         return jsonify(updated_patient)
-    except PatientNotFoundError as e:
-        logger.error(f"Patient not found: {e}")
-        return jsonify({"error": str(e)}), 404
-    except DatabaseError as e:
-        logger.error(f"Database error in update_patient: {e}")
-        return jsonify({"error": str(e)}), 500
-    except Exception as e:
-        logger.error(f"Unexpected error in update_patient: {e}")
+    except PatientNotFoundError as err:
+        logger.error("Patient not found: %s", err)
+        return jsonify({"error": str(err)}), 404
+    except DatabaseError as err:
+        logger.error("Database error in update_patient: %s", err)
+        return jsonify({"error": str(err)}), 500
+    except Exception as err:  # pylint: disable=broad-exception-caught
+        logger.error("Unexpected error in update_patient: %s", err)
         return jsonify({"error": "Internal server error"}), 500
 
 
@@ -114,12 +121,12 @@ def delete_patient(patient_id):
     try:
         crud.delete_patient(patient_id)
         return jsonify({"message": "Deleted Successfully"})
-    except PatientNotFoundError as e:
-        logger.error(f"Patient not found: {e}")
-        return jsonify({"error": str(e)}), 404
-    except DatabaseError as e:
-        logger.error(f"Database error in delete_patient: {e}")
-        return jsonify({"error": str(e)}), 500
-    except Exception as e:
-        logger.error(f"Unexpected error in delete_patient: {e}")
+    except PatientNotFoundError as err:
+        logger.error("Patient not found: %s", err)
+        return jsonify({"error": str(err)}), 404
+    except DatabaseError as err:
+        logger.error("Database error in delete_patient: %s", err)
+        return jsonify({"error": str(err)}), 500
+    except Exception as err:  # pylint: disable=broad-exception-caught
+        logger.error("Unexpected error in delete_patient: %s", err)
         return jsonify({"error": "Internal server error"}), 500

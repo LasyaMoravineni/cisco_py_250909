@@ -186,3 +186,133 @@ WHERE patients.id = ?
 DROP TABLE patients
 2025-09-17 09:18:00,871 [INFO] [no key 0.00021s] ()
 2025-09-17 09:18:00,873 [INFO] COMMIT
+2025-09-17 09:43:04,246 [INFO] BEGIN (implicit)
+2025-09-17 09:43:04,246 [INFO] PRAGMA main.table_info("patients")
+2025-09-17 09:43:04,246 [INFO] [raw sql] ()
+2025-09-17 09:43:04,247 [INFO] PRAGMA temp.table_info("patients")
+2025-09-17 09:43:04,247 [INFO] [raw sql] ()
+2025-09-17 09:43:04,247 [INFO] 
+CREATE TABLE patients (
+	id INTEGER NOT NULL, 
+	name VARCHAR(255) NOT NULL, 
+	age INTEGER NOT NULL, 
+	disease VARCHAR(255) NOT NULL, 
+	PRIMARY KEY (id)
+)
+
+
+2025-09-17 09:43:04,247 [INFO] [no key 0.00007s] ()
+2025-09-17 09:43:04,248 [INFO] COMMIT
+2025-09-17 09:43:04,283 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-09-17 09:43:04,283 [INFO] [33mPress CTRL+C to quit[0m
+2025-09-17 09:43:04,284 [INFO]  * Restarting with stat
+2025-09-17 09:43:04,568 [INFO] BEGIN (implicit)
+2025-09-17 09:43:04,568 [INFO] PRAGMA main.table_info("patients")
+2025-09-17 09:43:04,568 [INFO] [raw sql] ()
+2025-09-17 09:43:04,568 [INFO] COMMIT
+2025-09-17 09:43:04,588 [WARNING]  * Debugger is active!
+2025-09-17 09:43:04,596 [INFO]  * Debugger PIN: 120-713-500
+2025-09-17 09:43:38,441 [INFO] BEGIN (implicit)
+2025-09-17 09:43:38,442 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients
+2025-09-17 09:43:38,442 [INFO] [generated in 0.00016s] ()
+2025-09-17 09:43:38,443 [INFO] Read all patients, count: 0
+2025-09-17 09:43:38,443 [INFO] ROLLBACK
+2025-09-17 09:43:38,443 [INFO] 127.0.0.1 - - [17/Sep/2025 09:43:38] "GET /patients HTTP/1.1" 200 -
+2025-09-17 09:45:25,429 [INFO] BEGIN (implicit)
+2025-09-17 09:45:25,430 [INFO] INSERT INTO patients (id, name, age, disease) VALUES (?, ?, ?, ?)
+2025-09-17 09:45:25,431 [INFO] [generated in 0.00035s] (1, 'Anand', 32, 'Flu')
+2025-09-17 09:45:25,432 [INFO] COMMIT
+2025-09-17 09:45:25,433 [INFO] Patient created: {'id': 1, 'name': 'Anand', 'age': 32, 'disease': 'Flu'}
+2025-09-17 09:45:25,434 [INFO] BEGIN (implicit)
+2025-09-17 09:45:25,436 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+2025-09-17 09:45:25,436 [INFO] [generated in 0.00029s] (1,)
+2025-09-17 09:45:29,526 [INFO] Email sent successfully to lasyam2023@gmail.com with subject: 2025-09-17 09:45:25 Patient Anand Created
+2025-09-17 09:45:29,526 [INFO] ROLLBACK
+2025-09-17 09:45:29,526 [INFO] 127.0.0.1 - - [17/Sep/2025 09:45:29] "POST /patients HTTP/1.1" 200 -
+2025-09-17 09:45:54,303 [INFO] BEGIN (implicit)
+2025-09-17 09:45:54,303 [INFO] INSERT INTO patients (id, name, age, disease) VALUES (?, ?, ?, ?)
+2025-09-17 09:45:54,303 [INFO] [cached since 28.87s ago] (2, 'Shruti', 35, 'Asthma')
+2025-09-17 09:45:54,304 [INFO] COMMIT
+2025-09-17 09:45:54,307 [INFO] Patient created: {'id': 2, 'name': 'Shruti', 'age': 35, 'disease': 'Asthma'}
+2025-09-17 09:45:54,308 [INFO] BEGIN (implicit)
+2025-09-17 09:45:54,308 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+2025-09-17 09:45:54,309 [INFO] [cached since 28.87s ago] (2,)
+2025-09-17 09:45:58,087 [INFO] Email sent successfully to lasyam2023@gmail.com with subject: 2025-09-17 09:45:54 Patient Shruti Created
+2025-09-17 09:45:58,087 [INFO] ROLLBACK
+2025-09-17 09:45:58,087 [INFO] 127.0.0.1 - - [17/Sep/2025 09:45:58] "POST /patients HTTP/1.1" 200 -
+2025-09-17 09:46:15,642 [INFO] BEGIN (implicit)
+2025-09-17 09:46:15,642 [INFO] INSERT INTO patients (id, name, age, disease) VALUES (?, ?, ?, ?)
+2025-09-17 09:46:15,642 [INFO] [cached since 50.21s ago] (3, 'Rahul', 45, 'Diabetes')
+2025-09-17 09:46:15,642 [INFO] COMMIT
+2025-09-17 09:46:15,643 [INFO] Patient created: {'id': 3, 'name': 'Rahul', 'age': 45, 'disease': 'Diabetes'}
+2025-09-17 09:46:15,644 [INFO] BEGIN (implicit)
+2025-09-17 09:46:15,644 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+2025-09-17 09:46:15,644 [INFO] [cached since 50.21s ago] (3,)
+2025-09-17 09:46:19,652 [INFO] Email sent successfully to lasyam2023@gmail.com with subject: 2025-09-17 09:46:15 Patient Rahul Created
+2025-09-17 09:46:19,654 [INFO] ROLLBACK
+2025-09-17 09:46:19,655 [INFO] 127.0.0.1 - - [17/Sep/2025 09:46:19] "POST /patients HTTP/1.1" 200 -
+2025-09-17 09:46:21,415 [INFO] BEGIN (implicit)
+2025-09-17 09:46:21,415 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients
+2025-09-17 09:46:21,415 [INFO] [cached since 163s ago] ()
+2025-09-17 09:46:21,415 [INFO] Read all patients, count: 3
+2025-09-17 09:46:21,416 [INFO] ROLLBACK
+2025-09-17 09:46:21,416 [INFO] 127.0.0.1 - - [17/Sep/2025 09:46:21] "GET /patients HTTP/1.1" 200 -
+2025-09-17 09:46:33,546 [INFO] BEGIN (implicit)
+2025-09-17 09:46:33,548 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+ LIMIT ? OFFSET ?
+2025-09-17 09:46:33,548 [INFO] [generated in 0.00041s] (2, 1, 0)
+2025-09-17 09:46:33,549 [INFO] ROLLBACK
+2025-09-17 09:46:33,549 [INFO] 127.0.0.1 - - [17/Sep/2025 09:46:33] "GET /patients/2 HTTP/1.1" 200 -
+2025-09-17 09:46:46,962 [INFO] BEGIN (implicit)
+2025-09-17 09:46:46,963 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+ LIMIT ? OFFSET ?
+2025-09-17 09:46:46,963 [INFO] [cached since 13.42s ago] (2, 1, 0)
+2025-09-17 09:46:46,965 [INFO] ROLLBACK
+2025-09-17 09:46:46,965 [INFO] 127.0.0.1 - - [17/Sep/2025 09:46:46] "GET /patients/2 HTTP/1.1" 200 -
+2025-09-17 09:46:55,060 [INFO] BEGIN (implicit)
+2025-09-17 09:46:55,060 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+ LIMIT ? OFFSET ?
+2025-09-17 09:46:55,060 [INFO] [cached since 21.51s ago] (2, 1, 0)
+2025-09-17 09:46:55,061 [INFO] UPDATE patients SET age=? WHERE patients.id = ?
+2025-09-17 09:46:55,061 [INFO] [generated in 0.00012s] (32, 2)
+2025-09-17 09:46:55,062 [INFO] COMMIT
+2025-09-17 09:46:55,063 [INFO] Patient 2 updated: {'age': 32, 'disease': 'Asthma', 'id': 2, 'name': 'Shruti'}
+2025-09-17 09:46:55,063 [INFO] BEGIN (implicit)
+2025-09-17 09:46:55,063 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+2025-09-17 09:46:55,063 [INFO] [cached since 89.63s ago] (2,)
+2025-09-17 09:46:55,064 [INFO] ROLLBACK
+2025-09-17 09:46:55,064 [INFO] 127.0.0.1 - - [17/Sep/2025 09:46:55] "PUT /patients/2 HTTP/1.1" 200 -
+2025-09-17 09:46:57,713 [INFO] BEGIN (implicit)
+2025-09-17 09:46:57,714 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients
+2025-09-17 09:46:57,714 [INFO] [cached since 199.3s ago] ()
+2025-09-17 09:46:57,715 [INFO] Read all patients, count: 3
+2025-09-17 09:46:57,715 [INFO] ROLLBACK
+2025-09-17 09:46:57,716 [INFO] 127.0.0.1 - - [17/Sep/2025 09:46:57] "GET /patients HTTP/1.1" 200 -
+2025-09-17 09:47:46,711 [INFO] BEGIN (implicit)
+2025-09-17 09:47:46,712 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+ LIMIT ? OFFSET ?
+2025-09-17 09:47:46,712 [INFO] [cached since 73.16s ago] (9, 1, 0)
+2025-09-17 09:47:46,713 [ERROR] Patient 9 not found
+2025-09-17 09:47:46,713 [ERROR] Patient not found: Patient with ID 9 not found.
+2025-09-17 09:47:46,713 [INFO] ROLLBACK
+2025-09-17 09:47:46,713 [INFO] 127.0.0.1 - - [17/Sep/2025 09:47:46] "[33mGET /patients/9 HTTP/1.1[0m" 404 -
