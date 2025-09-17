@@ -1,7 +1,8 @@
-from app.models import db, Patient
+from hms.app.models import Patient
+from hms.app.db import db
 from sqlalchemy.exc import IntegrityError, SQLAlchemyError
-from app.exceptions import PatientNotFoundError, DatabaseError
-from app.logger import logger
+from hms.app.exceptions import PatientNotFoundError, DatabaseError
+from hms.app.logger import logger
 
 
 def create_patient(patient):
