@@ -8,10 +8,12 @@ from datetime import datetime
 
 from flask import Flask, request, jsonify
 
-from app import crud, emailer
-from app.db import init_db
-from app.exceptions import PatientNotFoundError, DatabaseError, EmailError
-from app.logger import logger
+from hms.app import crud, emailer
+from hms.app.db import init_db
+from hms.app.exceptions import PatientNotFoundError, DatabaseError, EmailError
+from hms.app.logger import logger
+from hms.app.scraper import scrape_medical_news
+
 
 application = Flask(__name__)
 init_db(application)
@@ -79,7 +81,15 @@ def read_patient_by_id(patient_id):
         logger.error(f"Unexpected error in read_patient_by_id: {e}")
         return jsonify({"error": "Internal server error"}), 500
 
-
+@application.route("/news", methods=["GET"])
+def get_news():
+    try:
+        news = scrape_medical_news()
+        return jsonify(news)
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+    
+    
 @application.route("/patients/<int:patient_id>", methods=["PUT"])
 def update_patient(patient_id):
     """Update an existing patient's details."""
