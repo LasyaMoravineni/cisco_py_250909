@@ -1,50 +1,25 @@
 from concurrent.futures import ThreadPoolExecutor
 import asyncio
 
-def _average_age(patients):
-    """Helper to compute average age of a list of patients"""
-    if not patients:
-        return 0
-    return sum(p['age'] for p in patients) / len(patients)
+def _calculate_batch_average(patients):
+    ages = [p["age"] for p in patients]
+    return sum(ages) / len(ages) if ages else 0
 
 def calculate_average_age_threaded(patients, batch_size=10):
-    """
-    Calculate average patient age in batches using ThreadPoolExecutor.
-    
-    :param patients: list of dicts with 'age' key
-    :param batch_size: number of patients per batch
-    :return: list of batch averages
-    """
-    batch_averages = []
-
-    # Split patients into batches
-    batches = [patients[i:i+batch_size] for i in range(0, len(patients), batch_size)]
-
+    batches = [patients[i:i + batch_size] for i in range(0, len(patients), batch_size)]
     with ThreadPoolExecutor() as executor:
-        results = executor.map(_average_age, batches)
-        batch_averages.extend(results)
-
-    return batch_averages
-
-
-# ----------- Async version -----------
-async def _async_average_age(batch):
-    await asyncio.sleep(0)  # simulate async operation
-    return _average_age(batch)
+        results = list(executor.map(_calculate_batch_average, batches))
+    # FIX: return weighted average, not list
+    total_age = sum(p["age"] for p in patients)
+    return total_age / len(patients) if patients else 0
 
 async def calculate_average_age_async(patients, batch_size=10):
-    """
-    Calculate average patient age in batches using asyncio coroutines.
-    
-    :param patients: list of dicts with 'age' key
-    :param batch_size: number of patients per batch
-    :return: list of batch averages
-    """
-    batch_averages = []
+    batches = [patients[i:i + batch_size] for i in range(0, len(patients), batch_size)]
 
-    batches = [patients[i:i+batch_size] for i in range(0, len(patients), batch_size)]
-    tasks = [_async_average_age(batch) for batch in batches]
-    results = await asyncio.gather(*tasks)
-    batch_averages.extend(results)
+    async def process_batch(batch):
+        return _calculate_batch_average(batch)
 
-    return batch_averages
+    results = await asyncio.gather(*(process_batch(b) for b in batches))
+    # FIX: return weighted average, not list
+    total_age = sum(p["age"] for p in patients)
+    return total_age / len(patients) if patients else 0

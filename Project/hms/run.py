@@ -1,4 +1,4 @@
-from app.routes import application
+from hms.app.routes import application
 
 if __name__ == "__main__":
     # Run Flask app
