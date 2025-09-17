@@ -18,6 +18,12 @@ from hms.app.exceptions import PatientNotFoundError, DatabaseError, EmailError
 from hms.app.logger import logger
 from hms.app.scraper import scrape_medical_news
 
+from hms.app import crud, emailer
+from hms.app.db import init_db
+from hms.app.exceptions import PatientNotFoundError, DatabaseError, EmailError
+from hms.app.logger import logger
+from hms.app.scraper import scrape_medical_news
+
 
 application = Flask(__name__)
 init_db(application)
