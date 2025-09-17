@@ -316,3 +316,335 @@ WHERE patients.id = ?
 2025-09-17 09:47:46,713 [ERROR] Patient not found: Patient with ID 9 not found.
 2025-09-17 09:47:46,713 [INFO] ROLLBACK
 2025-09-17 09:47:46,713 [INFO] 127.0.0.1 - - [17/Sep/2025 09:47:46] "[33mGET /patients/9 HTTP/1.1[0m" 404 -
+2025-09-17 11:42:46,736 [INFO] BEGIN (implicit)
+2025-09-17 11:42:46,736 [INFO] PRAGMA main.table_info("patients")
+2025-09-17 11:42:46,736 [INFO] [raw sql] ()
+2025-09-17 11:42:46,737 [INFO] COMMIT
+2025-09-17 11:42:46,754 [INFO] BEGIN (implicit)
+2025-09-17 11:42:46,754 [INFO] PRAGMA main.table_info("patients")
+2025-09-17 11:42:46,754 [INFO] [raw sql] ()
+2025-09-17 11:42:46,755 [INFO] COMMIT
+2025-09-17 11:42:46,759 [INFO] BEGIN (implicit)
+2025-09-17 11:42:46,759 [INFO] INSERT INTO patients (id, name, age, disease) VALUES (?, ?, ?, ?)
+2025-09-17 11:42:46,760 [INFO] [generated in 0.00017s] (1, 'Alice Johnson', 34, 'Flu')
+2025-09-17 11:42:46,760 [INFO] ROLLBACK
+2025-09-17 11:42:46,760 [ERROR] Duplicate patient ID 1 - (sqlite3.IntegrityError) UNIQUE constraint failed: patients.id
+[SQL: INSERT INTO patients (id, name, age, disease) VALUES (?, ?, ?, ?)]
+[parameters: (1, 'Alice Johnson', 34, 'Flu')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-09-17 11:42:46,760 [ERROR] Database error in create_patient: Patient with ID 1 already exists
+2025-09-17 11:42:46,789 [INFO] BEGIN (implicit)
+2025-09-17 11:42:46,790 [INFO] PRAGMA main.table_info("patients")
+2025-09-17 11:42:46,790 [INFO] [raw sql] ()
+2025-09-17 11:42:46,790 [INFO] 
+DROP TABLE patients
+2025-09-17 11:42:46,790 [INFO] [no key 0.00007s] ()
+2025-09-17 11:42:46,791 [INFO] COMMIT
+2025-09-17 11:42:46,791 [INFO] BEGIN (implicit)
+2025-09-17 11:42:46,791 [INFO] PRAGMA main.table_info("patients")
+2025-09-17 11:42:46,791 [INFO] [raw sql] ()
+2025-09-17 11:42:46,792 [INFO] PRAGMA temp.table_info("patients")
+2025-09-17 11:42:46,792 [INFO] [raw sql] ()
+2025-09-17 11:42:46,792 [INFO] 
+CREATE TABLE patients (
+	id INTEGER NOT NULL, 
+	name VARCHAR(255) NOT NULL, 
+	age INTEGER NOT NULL, 
+	disease VARCHAR(255) NOT NULL, 
+	PRIMARY KEY (id)
+)
+
+
+2025-09-17 11:42:46,792 [INFO] [no key 0.00008s] ()
+2025-09-17 11:42:46,793 [INFO] COMMIT
+2025-09-17 11:42:46,793 [INFO] BEGIN (implicit)
+2025-09-17 11:42:46,793 [INFO] INSERT INTO patients (id, name, age, disease) VALUES (?, ?, ?, ?)
+2025-09-17 11:42:46,794 [INFO] [cached since 0.03416s ago] (2, 'Rahul Mehta', 45, 'Diabetes')
+2025-09-17 11:42:46,794 [INFO] COMMIT
+2025-09-17 11:42:46,794 [INFO] Patient created: {'id': 2, 'name': 'Rahul Mehta', 'age': 45, 'disease': 'Diabetes'}
+2025-09-17 11:42:46,795 [INFO] BEGIN (implicit)
+2025-09-17 11:42:46,796 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+2025-09-17 11:42:46,796 [INFO] [generated in 0.00017s] (2,)
+2025-09-17 11:42:50,657 [INFO] Email sent successfully to lasyam2023@gmail.com with subject: 2025-09-17 11:42:46 Patient Rahul Mehta Created
+2025-09-17 11:42:50,659 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients
+2025-09-17 11:42:50,659 [INFO] [generated in 0.00022s] ()
+2025-09-17 11:42:50,659 [INFO] Read all patients, count: 1
+2025-09-17 11:42:50,660 [INFO] ROLLBACK
+2025-09-17 11:42:50,660 [INFO] BEGIN (implicit)
+2025-09-17 11:42:50,660 [INFO] PRAGMA main.table_info("patients")
+2025-09-17 11:42:50,661 [INFO] [raw sql] ()
+2025-09-17 11:42:50,661 [INFO] 
+DROP TABLE patients
+2025-09-17 11:42:50,661 [INFO] [no key 0.00011s] ()
+2025-09-17 11:42:50,662 [INFO] COMMIT
+2025-09-17 11:42:50,663 [INFO] BEGIN (implicit)
+2025-09-17 11:42:50,663 [INFO] PRAGMA main.table_info("patients")
+2025-09-17 11:42:50,663 [INFO] [raw sql] ()
+2025-09-17 11:42:50,663 [INFO] PRAGMA temp.table_info("patients")
+2025-09-17 11:42:50,663 [INFO] [raw sql] ()
+2025-09-17 11:42:50,664 [INFO] 
+CREATE TABLE patients (
+	id INTEGER NOT NULL, 
+	name VARCHAR(255) NOT NULL, 
+	age INTEGER NOT NULL, 
+	disease VARCHAR(255) NOT NULL, 
+	PRIMARY KEY (id)
+)
+
+
+2025-09-17 11:42:50,664 [INFO] [no key 0.00010s] ()
+2025-09-17 11:42:50,664 [INFO] COMMIT
+2025-09-17 11:42:50,665 [INFO] BEGIN (implicit)
+2025-09-17 11:42:50,665 [INFO] INSERT INTO patients (id, name, age, disease) VALUES (?, ?, ?, ?)
+2025-09-17 11:42:50,666 [INFO] [cached since 3.906s ago] (3, 'Sophia Lee', 29, 'Asthma')
+2025-09-17 11:42:50,666 [INFO] COMMIT
+2025-09-17 11:42:50,667 [INFO] Patient created: {'id': 3, 'name': 'Sophia Lee', 'age': 29, 'disease': 'Asthma'}
+2025-09-17 11:42:50,667 [INFO] BEGIN (implicit)
+2025-09-17 11:42:50,668 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+2025-09-17 11:42:50,668 [INFO] [cached since 3.872s ago] (3,)
+2025-09-17 11:42:54,338 [INFO] Email sent successfully to lasyam2023@gmail.com with subject: 2025-09-17 11:42:50 Patient Sophia Lee Created
+2025-09-17 11:42:54,346 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+ LIMIT ? OFFSET ?
+2025-09-17 11:42:54,346 [INFO] [generated in 0.00054s] (3, 1, 0)
+2025-09-17 11:42:54,349 [INFO] UPDATE patients SET age=? WHERE patients.id = ?
+2025-09-17 11:42:54,349 [INFO] [generated in 0.00041s] (30, 3)
+2025-09-17 11:42:54,350 [INFO] COMMIT
+2025-09-17 11:42:54,352 [INFO] Patient 3 updated: {'id': 3, 'name': 'Sophia Lee', 'age': 30, 'disease': 'Asthma'}
+2025-09-17 11:42:54,352 [INFO] BEGIN (implicit)
+2025-09-17 11:42:54,353 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+2025-09-17 11:42:54,353 [INFO] [cached since 7.557s ago] (3,)
+2025-09-17 11:42:54,354 [INFO] ROLLBACK
+2025-09-17 11:42:54,355 [INFO] BEGIN (implicit)
+2025-09-17 11:42:54,355 [INFO] PRAGMA main.table_info("patients")
+2025-09-17 11:42:54,355 [INFO] [raw sql] ()
+2025-09-17 11:42:54,355 [INFO] 
+DROP TABLE patients
+2025-09-17 11:42:54,355 [INFO] [no key 0.00014s] ()
+2025-09-17 11:42:54,357 [INFO] COMMIT
+2025-09-17 11:42:54,358 [INFO] BEGIN (implicit)
+2025-09-17 11:42:54,358 [INFO] PRAGMA main.table_info("patients")
+2025-09-17 11:42:54,358 [INFO] [raw sql] ()
+2025-09-17 11:42:54,358 [INFO] PRAGMA temp.table_info("patients")
+2025-09-17 11:42:54,358 [INFO] [raw sql] ()
+2025-09-17 11:42:54,359 [INFO] 
+CREATE TABLE patients (
+	id INTEGER NOT NULL, 
+	name VARCHAR(255) NOT NULL, 
+	age INTEGER NOT NULL, 
+	disease VARCHAR(255) NOT NULL, 
+	PRIMARY KEY (id)
+)
+
+
+2025-09-17 11:42:54,359 [INFO] [no key 0.00015s] ()
+2025-09-17 11:42:54,360 [INFO] COMMIT
+2025-09-17 11:42:54,362 [INFO] BEGIN (implicit)
+2025-09-17 11:42:54,362 [INFO] INSERT INTO patients (id, name, age, disease) VALUES (?, ?, ?, ?)
+2025-09-17 11:42:54,362 [INFO] [cached since 7.603s ago] (4, 'John Doe', 50, 'Heart Disease')
+2025-09-17 11:42:54,363 [INFO] COMMIT
+2025-09-17 11:42:54,364 [INFO] Patient created: {'id': 4, 'name': 'John Doe', 'age': 50, 'disease': 'Heart Disease'}
+2025-09-17 11:42:54,365 [INFO] BEGIN (implicit)
+2025-09-17 11:42:54,365 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+2025-09-17 11:42:54,365 [INFO] [cached since 7.569s ago] (4,)
+2025-09-17 11:42:57,937 [INFO] Email sent successfully to lasyam2023@gmail.com with subject: 2025-09-17 11:42:54 Patient John Doe Created
+2025-09-17 11:42:57,944 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+ LIMIT ? OFFSET ?
+2025-09-17 11:42:57,944 [INFO] [cached since 3.598s ago] (4, 1, 0)
+2025-09-17 11:42:57,946 [INFO] DELETE FROM patients WHERE patients.id = ?
+2025-09-17 11:42:57,946 [INFO] [generated in 0.00024s] (4,)
+2025-09-17 11:42:57,947 [INFO] COMMIT
+2025-09-17 11:42:57,949 [INFO] Patient 4 deleted
+2025-09-17 11:42:57,950 [INFO] BEGIN (implicit)
+2025-09-17 11:42:57,950 [INFO] PRAGMA main.table_info("patients")
+2025-09-17 11:42:57,950 [INFO] [raw sql] ()
+2025-09-17 11:42:57,951 [INFO] 
+DROP TABLE patients
+2025-09-17 11:42:57,951 [INFO] [no key 0.00013s] ()
+2025-09-17 11:42:57,952 [INFO] COMMIT
+2025-09-17 11:46:35,746 [INFO] BEGIN (implicit)
+2025-09-17 11:46:35,747 [INFO] PRAGMA main.table_info("patients")
+2025-09-17 11:46:35,747 [INFO] [raw sql] ()
+2025-09-17 11:46:35,747 [INFO] PRAGMA temp.table_info("patients")
+2025-09-17 11:46:35,747 [INFO] [raw sql] ()
+2025-09-17 11:46:35,747 [INFO] 
+CREATE TABLE patients (
+	id INTEGER NOT NULL, 
+	name VARCHAR(255) NOT NULL, 
+	age INTEGER NOT NULL, 
+	disease VARCHAR(255) NOT NULL, 
+	PRIMARY KEY (id)
+)
+
+
+2025-09-17 11:46:35,747 [INFO] [no key 0.00005s] ()
+2025-09-17 11:46:35,748 [INFO] COMMIT
+2025-09-17 11:46:35,764 [INFO] BEGIN (implicit)
+2025-09-17 11:46:35,764 [INFO] PRAGMA main.table_info("patients")
+2025-09-17 11:46:35,764 [INFO] [raw sql] ()
+2025-09-17 11:46:35,764 [INFO] COMMIT
+2025-09-17 11:46:35,768 [INFO] BEGIN (implicit)
+2025-09-17 11:46:35,769 [INFO] INSERT INTO patients (id, name, age, disease) VALUES (?, ?, ?, ?)
+2025-09-17 11:46:35,769 [INFO] [generated in 0.00016s] (1, 'Alice Johnson', 34, 'Flu')
+2025-09-17 11:46:35,770 [INFO] COMMIT
+2025-09-17 11:46:35,770 [INFO] Patient created: {'id': 1, 'name': 'Alice Johnson', 'age': 34, 'disease': 'Flu'}
+2025-09-17 11:46:35,770 [INFO] BEGIN (implicit)
+2025-09-17 11:46:35,771 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+2025-09-17 11:46:35,771 [INFO] [generated in 0.00012s] (1,)
+2025-09-17 11:46:39,640 [INFO] Email sent successfully to lasyam2023@gmail.com with subject: 2025-09-17 11:46:35 Patient Alice Johnson Created
+2025-09-17 11:46:39,648 [INFO] ROLLBACK
+2025-09-17 11:46:39,649 [INFO] BEGIN (implicit)
+2025-09-17 11:46:39,649 [INFO] PRAGMA main.table_info("patients")
+2025-09-17 11:46:39,650 [INFO] [raw sql] ()
+2025-09-17 11:46:39,651 [INFO] 
+DROP TABLE patients
+2025-09-17 11:46:39,651 [INFO] [no key 0.00025s] ()
+2025-09-17 11:46:39,654 [INFO] COMMIT
+2025-09-17 11:46:39,655 [INFO] BEGIN (implicit)
+2025-09-17 11:46:39,655 [INFO] PRAGMA main.table_info("patients")
+2025-09-17 11:46:39,656 [INFO] [raw sql] ()
+2025-09-17 11:46:39,656 [INFO] PRAGMA temp.table_info("patients")
+2025-09-17 11:46:39,657 [INFO] [raw sql] ()
+2025-09-17 11:46:39,657 [INFO] 
+CREATE TABLE patients (
+	id INTEGER NOT NULL, 
+	name VARCHAR(255) NOT NULL, 
+	age INTEGER NOT NULL, 
+	disease VARCHAR(255) NOT NULL, 
+	PRIMARY KEY (id)
+)
+
+
+2025-09-17 11:46:39,657 [INFO] [no key 0.00020s] ()
+2025-09-17 11:46:39,659 [INFO] COMMIT
+2025-09-17 11:46:39,662 [INFO] BEGIN (implicit)
+2025-09-17 11:46:39,662 [INFO] INSERT INTO patients (id, name, age, disease) VALUES (?, ?, ?, ?)
+2025-09-17 11:46:39,662 [INFO] [cached since 3.893s ago] (2, 'Rahul Mehta', 45, 'Diabetes')
+2025-09-17 11:46:39,663 [INFO] COMMIT
+2025-09-17 11:46:39,665 [INFO] Patient created: {'id': 2, 'name': 'Rahul Mehta', 'age': 45, 'disease': 'Diabetes'}
+2025-09-17 11:46:39,665 [INFO] BEGIN (implicit)
+2025-09-17 11:46:39,666 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+2025-09-17 11:46:39,666 [INFO] [cached since 3.894s ago] (2,)
+2025-09-17 11:46:43,212 [INFO] Email sent successfully to lasyam2023@gmail.com with subject: 2025-09-17 11:46:39 Patient Rahul Mehta Created
+2025-09-17 11:46:43,217 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients
+2025-09-17 11:46:43,217 [INFO] [generated in 0.00085s] ()
+2025-09-17 11:46:43,218 [INFO] Read all patients, count: 1
+2025-09-17 11:46:43,220 [INFO] ROLLBACK
+2025-09-17 11:46:43,220 [INFO] BEGIN (implicit)
+2025-09-17 11:46:43,221 [INFO] PRAGMA main.table_info("patients")
+2025-09-17 11:46:43,221 [INFO] [raw sql] ()
+2025-09-17 11:46:43,221 [INFO] 
+DROP TABLE patients
+2025-09-17 11:46:43,222 [INFO] [no key 0.00021s] ()
+2025-09-17 11:46:43,224 [INFO] COMMIT
+2025-09-17 11:46:43,226 [INFO] BEGIN (implicit)
+2025-09-17 11:46:43,226 [INFO] PRAGMA main.table_info("patients")
+2025-09-17 11:46:43,226 [INFO] [raw sql] ()
+2025-09-17 11:46:43,227 [INFO] PRAGMA temp.table_info("patients")
+2025-09-17 11:46:43,227 [INFO] [raw sql] ()
+2025-09-17 11:46:43,228 [INFO] 
+CREATE TABLE patients (
+	id INTEGER NOT NULL, 
+	name VARCHAR(255) NOT NULL, 
+	age INTEGER NOT NULL, 
+	disease VARCHAR(255) NOT NULL, 
+	PRIMARY KEY (id)
+)
+
+
+2025-09-17 11:46:43,228 [INFO] [no key 0.00018s] ()
+2025-09-17 11:46:43,230 [INFO] COMMIT
+2025-09-17 11:46:43,231 [INFO] BEGIN (implicit)
+2025-09-17 11:46:43,232 [INFO] INSERT INTO patients (id, name, age, disease) VALUES (?, ?, ?, ?)
+2025-09-17 11:46:43,232 [INFO] [cached since 7.463s ago] (3, 'Sophia Lee', 29, 'Asthma')
+2025-09-17 11:46:43,233 [INFO] COMMIT
+2025-09-17 11:46:43,234 [INFO] Patient created: {'id': 3, 'name': 'Sophia Lee', 'age': 29, 'disease': 'Asthma'}
+2025-09-17 11:46:43,234 [INFO] BEGIN (implicit)
+2025-09-17 11:46:43,235 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+2025-09-17 11:46:43,235 [INFO] [cached since 7.464s ago] (3,)
+2025-09-17 11:46:46,482 [INFO] Email sent successfully to lasyam2023@gmail.com with subject: 2025-09-17 11:46:43 Patient Sophia Lee Created
+2025-09-17 11:46:46,487 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+ LIMIT ? OFFSET ?
+2025-09-17 11:46:46,488 [INFO] [generated in 0.00023s] (3, 1, 0)
+2025-09-17 11:46:46,488 [INFO] UPDATE patients SET age=? WHERE patients.id = ?
+2025-09-17 11:46:46,489 [INFO] [generated in 0.00012s] (30, 3)
+2025-09-17 11:46:46,489 [INFO] COMMIT
+2025-09-17 11:46:46,490 [INFO] Patient 3 updated: {'id': 3, 'name': 'Sophia Lee', 'age': 30, 'disease': 'Asthma'}
+2025-09-17 11:46:46,490 [INFO] BEGIN (implicit)
+2025-09-17 11:46:46,490 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+2025-09-17 11:46:46,490 [INFO] [cached since 10.72s ago] (3,)
+2025-09-17 11:46:46,491 [INFO] ROLLBACK
+2025-09-17 11:46:46,491 [INFO] BEGIN (implicit)
+2025-09-17 11:46:46,491 [INFO] PRAGMA main.table_info("patients")
+2025-09-17 11:46:46,491 [INFO] [raw sql] ()
+2025-09-17 11:46:46,491 [INFO] 
+DROP TABLE patients
+2025-09-17 11:46:46,492 [INFO] [no key 0.00007s] ()
+2025-09-17 11:46:46,492 [INFO] COMMIT
+2025-09-17 11:46:46,493 [INFO] BEGIN (implicit)
+2025-09-17 11:46:46,493 [INFO] PRAGMA main.table_info("patients")
+2025-09-17 11:46:46,493 [INFO] [raw sql] ()
+2025-09-17 11:46:46,493 [INFO] PRAGMA temp.table_info("patients")
+2025-09-17 11:46:46,493 [INFO] [raw sql] ()
+2025-09-17 11:46:46,493 [INFO] 
+CREATE TABLE patients (
+	id INTEGER NOT NULL, 
+	name VARCHAR(255) NOT NULL, 
+	age INTEGER NOT NULL, 
+	disease VARCHAR(255) NOT NULL, 
+	PRIMARY KEY (id)
+)
+
+
+2025-09-17 11:46:46,493 [INFO] [no key 0.00008s] ()
+2025-09-17 11:46:46,494 [INFO] COMMIT
+2025-09-17 11:46:46,495 [INFO] BEGIN (implicit)
+2025-09-17 11:46:46,495 [INFO] INSERT INTO patients (id, name, age, disease) VALUES (?, ?, ?, ?)
+2025-09-17 11:46:46,495 [INFO] [cached since 10.73s ago] (4, 'John Doe', 50, 'Heart Disease')
+2025-09-17 11:46:46,495 [INFO] COMMIT
+2025-09-17 11:46:46,496 [INFO] Patient created: {'id': 4, 'name': 'John Doe', 'age': 50, 'disease': 'Heart Disease'}
+2025-09-17 11:46:46,496 [INFO] BEGIN (implicit)
+2025-09-17 11:46:46,496 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+2025-09-17 11:46:46,496 [INFO] [cached since 10.72s ago] (4,)
+2025-09-17 11:46:50,017 [INFO] Email sent successfully to lasyam2023@gmail.com with subject: 2025-09-17 11:46:46 Patient John Doe Created
+2025-09-17 11:46:50,020 [INFO] SELECT patients.id AS patients_id, patients.name AS patients_name, patients.age AS patients_age, patients.disease AS patients_disease 
+FROM patients 
+WHERE patients.id = ?
+ LIMIT ? OFFSET ?
+2025-09-17 11:46:50,021 [INFO] [cached since 3.534s ago] (4, 1, 0)
+2025-09-17 11:46:50,022 [INFO] DELETE FROM patients WHERE patients.id = ?
+2025-09-17 11:46:50,023 [INFO] [generated in 0.00022s] (4,)
+2025-09-17 11:46:50,023 [INFO] COMMIT
+2025-09-17 11:46:50,024 [INFO] Patient 4 deleted
+2025-09-17 11:46:50,024 [INFO] BEGIN (implicit)
+2025-09-17 11:46:50,024 [INFO] PRAGMA main.table_info("patients")
+2025-09-17 11:46:50,025 [INFO] [raw sql] ()
+2025-09-17 11:46:50,025 [INFO] 
+DROP TABLE patients
+2025-09-17 11:46:50,025 [INFO] [no key 0.00007s] ()
+2025-09-17 11:46:50,025 [INFO] COMMIT
